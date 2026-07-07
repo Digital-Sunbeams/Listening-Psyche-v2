@@ -117,6 +117,7 @@
   .portrait{font-family:"Instrument Serif",serif;font-size:clamp(19px,3.3vw,23px);line-height:1.5;color:var(--text);margin:0 0 32px;max-width:62ch}
   .portrait .accent{font-style:italic;color:var(--violet)}
   .viz-help{font-size:13px;color:var(--muted);line-height:1.55;margin:-6px 0 16px}
+  .card p.subh{font-family:"Instrument Serif",serif;font-weight:400;font-size:21px;line-height:1.25;color:var(--text);letter-spacing:.01em;margin:26px 0 6px}
   .viz-cap{font-size:13px;color:var(--muted);line-height:1.55;margin:12px 0 0}
   .viz-cap b{color:var(--text);font-weight:500}
   .tells{display:flex;flex-direction:column;gap:12px}
@@ -1477,7 +1478,7 @@ const DB = [
   {t:"The Blacksmith",a:"Steeleye Span",g:"british-folk",pg:"folk",yr:1971,ar:.4,va:.4,de:.8,gems:[.45,.5,.2],tim:["acoustic","airy_vocals","strings"],str:["ostinato","sparse"],lyr:["longing","narrative"]},
   {t:"You Oughta Know",a:"Alanis Morissette",g:"alt-rock",pg:"rock",yr:1995,ar:.8,va:.35,de:.75,gems:[.25,.65,.55],tim:["distortion","clean_bass","dense"],str:["build_release","crescendo"],lyr:["defiance","longing"]},
   {t:"Ironic",a:"Alanis Morissette",g:"alt-rock",pg:"rock",yr:1995,ar:.6,va:.55,de:.65,gems:[.25,.7,.25],tim:["acoustic","distortion","clean_bass"],str:["build_release","ostinato"],lyr:["narrative","introspection"]},
-{t:"La Vida Breve",a:"Paco de Lucía",g:"flamenco",pg:"world",yr:1991,ar:.6,va:.55,de:.78,gems:[.5,.5,.3],tim:["acoustic","hand_perc"],str:["motif_transform","build_release","ostinato"],lyr:["none_instrumental"]},{t:"Nana",a:"Manuel de Falla",g:"classical-guitar",pg:"classical",yr:1914,ar:.25,va:.5,de:.8,gems:[.7,.1,.2],tim:["acoustic"],str:["sparse","motif_transform"],lyr:["none_instrumental"]},{t:"Chaconne",a:"J.S. Bach",g:"baroque",pg:"classical",yr:1720,ar:.4,va:.45,de:.92,gems:[.85,.15,.4],tim:["acoustic"],str:["ostinato","motif_transform","build_release","crescendo"],lyr:["none_instrumental"]},{t:"Asturias (Leyenda)",a:"Isaac Albéniz",g:"classical-guitar",pg:"classical",yr:1892,ar:.6,va:.45,de:.85,gems:[.6,.4,.35],tim:["acoustic"],str:["ostinato","build_release","motif_transform"],lyr:["none_instrumental"]},{t:"Recuerdos de la Alhambra",a:"Francisco Tárrega",g:"classical-guitar",pg:"classical",yr:1899,ar:.35,va:.45,de:.85,gems:[.8,.15,.3],tim:["acoustic"],str:["ostinato","motif_transform"],lyr:["none_instrumental"]},{t:"High Hopes",a:"Pink Floyd",g:"prog-rock",pg:"rock",yr:1994,ar:.45,va:.35,de:.85,gems:[.7,.25,.45],tim:["distortion","keys","strings","choir"],str:["build_release","crescendo","motif_transform"],lyr:["introspection","longing"]},{t:"The Show Must Go On",a:"Queen",g:"arena-rock",pg:"rock",yr:1991,ar:.65,va:.35,de:.85,gems:[.6,.35,.5],tim:["distortion","keys","choir","strings"],str:["build_release","crescendo"],lyr:["defiance","introspection"]},{t:"For the Love of God",a:"Steve Vai",g:"instrumental-rock",pg:"rock",yr:1990,ar:.65,va:.5,de:.8,gems:[.55,.4,.3],tim:["distortion"],str:["build_release","crescendo","motif_transform"],lyr:["none_instrumental"]},{t:"Tubular Bells",a:"Mike Oldfield",g:"prog-instrumental",pg:"rock",yr:1973,ar:.5,va:.5,de:.82,gems:[.55,.35,.3],tim:["keys","acoustic","distortion"],str:["ostinato","build_release","motif_transform"],lyr:["none_instrumental"]},{t:"Soldier, Poet, King",a:"The Oh Hellos",g:"indie-folk",pg:"folk",yr:2015,ar:.55,va:.5,de:.7,gems:[.4,.5,.3],tim:["acoustic","hand_perc","choir"],str:["build_release","crescendo","ostinato"],lyr:["narrative","defiance"]},{t:"Sleep Chamber",a:"Steve Roach",g:"ambient",pg:"electronic",yr:1988,ar:.15,va:.4,de:.8,gems:[.65,.05,.35],tim:["analog_synth"],str:["sparse","ostinato"],lyr:["none_instrumental"]},{t:"Fields of Gold",a:"Sting",g:"adult-pop",pg:"pop",yr:1993,ar:.4,va:.6,de:.7,gems:[.5,.35,.2],tim:["acoustic","keys"],str:["motif_transform","build_release"],lyr:["longing","devotion","narrative"]},{t:"Akaal",a:"Ajeet",g:"mantra",pg:"world",yr:2017,ar:.35,va:.55,de:.72,gems:[.7,.25,.2],tim:["airy_vocals","hand_perc","acoustic","strings"],str:["ostinato","build_release"],lyr:["devotion","transcendence"]},{t:"The Acclamation of Bonds",a:"Emperor",g:"symphonic-black-metal",pg:"metal",yr:2001,ar:.85,va:.3,de:.8,gems:[.4,.5,.7],tim:["distortion","dense","keys","choir"],str:["build_release","motif_transform"],lyr:["defiance","transcendence"]},{t:"A Moment of Clarity",a:"Death",g:"death-metal",pg:"metal",yr:1998,ar:.85,va:.3,de:.8,gems:[.35,.5,.7],tim:["distortion","dense"],str:["build_release","motif_transform"],lyr:["introspection","defiance"]},{t:"Ghost of Perdition",a:"Opeth",g:"prog-death-metal",pg:"metal",yr:2005,ar:.75,va:.35,de:.88,gems:[.45,.4,.6],tim:["distortion","dense","acoustic","keys"],str:["build_release","motif_transform","ostinato"],lyr:["narrative","introspection"]},{t:"Smoke of Many Fires",a:"Be'lakor",g:"melodic-death-metal",pg:"metal",yr:2012,ar:.8,va:.4,de:.82,gems:[.45,.45,.55],tim:["distortion","dense","keys"],str:["build_release","motif_transform","crescendo"],lyr:["introspection","narrative"]},{t:"House of Light",a:"Rivers of Nihil",g:"prog-death-metal",pg:"metal",yr:2021,ar:.8,va:.35,de:.85,gems:[.45,.4,.6],tim:["distortion","dense","brass","keys"],str:["build_release","motif_transform","syncopation_med"],lyr:["introspection","transcendence"]},{t:"Another Chance",a:"Oliver Heldens",g:"house",pg:"electronic",yr:2024,ar:.8,va:.6,de:.5,gems:[.25,.7,.2],tim:["analog_synth","clean_bass"],str:["four_floor","build_release"],lyr:["longing"]},{t:"Set Me Free",a:"Oliver Heldens",g:"house",pg:"electronic",yr:2023,ar:.8,va:.6,de:.5,gems:[.25,.7,.2],tim:["analog_synth","clean_bass"],str:["four_floor","build_release"],lyr:["longing","joy_celebration"]},{t:"Dracula (JENNIE Remix)",a:"Tame Impala & JENNIE",g:"psych-pop",pg:"pop",yr:2025,ar:.6,va:.5,de:.55,gems:[.3,.5,.3],tim:["analog_synth","airy_vocals"],str:["four_floor","build_release"],lyr:["longing"]},{t:"Sweet Talker",a:"Olly Alexander",g:"synth-pop",pg:"pop",yr:2024,ar:.7,va:.65,de:.5,gems:[.25,.65,.2],tim:["analog_synth","airy_vocals"],str:["four_floor"],lyr:["longing","joy_celebration"]},{t:"Rather Be",a:"Clean Bandit",g:"dance-pop",pg:"pop",yr:2014,ar:.7,va:.75,de:.55,gems:[.3,.7,.15],tim:["strings","analog_synth","clean_bass"],str:["four_floor","build_release","vocal_entrance"],lyr:["devotion","joy_celebration"]},{t:"Symphony",a:"Clean Bandit",g:"dance-pop",pg:"pop",yr:2017,ar:.65,va:.65,de:.6,gems:[.35,.6,.2],tim:["strings","analog_synth"],str:["four_floor","build_release","crescendo"],lyr:["devotion","longing"]},{t:"Watch Out for This (Bumaye)",a:"Major Lazer",g:"dancehall",pg:"electronic",yr:2013,ar:.85,va:.7,de:.5,gems:[.2,.75,.25],tim:["clean_bass","analog_synth","hand_perc","brass"],str:["four_floor","syncopation_med"],lyr:["joy_celebration","social_bond"]},{t:"Rosa",a:"Rainer Scheurenbrand",g:"classical-guitar",pg:"classical",yr:2005,ar:.3,va:.5,de:.72,gems:[.6,.15,.2],tim:["acoustic"],str:["sparse","motif_transform"],lyr:["none_instrumental"]},{t:"still feel.",a:"half·alive",g:"art-pop",pg:"pop",yr:2017,ar:.7,va:.65,de:.68,gems:[.3,.6,.25],tim:["clean_bass","keys","airy_vocals"],str:["syncopation_med","build_release","vocal_entrance"],lyr:["introspection","joy_celebration"]},{t:"What You Know",a:"Two Door Cinema Club",g:"indie-rock",pg:"rock",yr:2010,ar:.75,va:.8,de:.6,gems:[.25,.7,.15],tim:["distortion","clean_bass"],str:["syncopation_med","build_release"],lyr:["longing","joy_celebration"]},{t:"Spiderwebs",a:"No Doubt",g:"ska-punk",pg:"rock",yr:1995,ar:.8,va:.65,de:.6,gems:[.2,.7,.3],tim:["brass","distortion","clean_bass"],str:["syncopation_med","build_release"],lyr:["defiance","longing"]},{t:"Heaven Is a Place on Earth",a:"Lana Del Rey",g:"dream-pop",pg:"pop",yr:2020,ar:.35,va:.45,de:.68,gems:[.6,.25,.3],tim:["airy_vocals","strings","keys"],str:["sparse","build_release"],lyr:["longing","devotion"]},{t:"A Walk",a:"Tycho",g:"chillwave",pg:"electronic",yr:2011,ar:.5,va:.6,de:.65,gems:[.45,.4,.2],tim:["analog_synth","clean_bass","keys"],str:["ostinato","four_floor","build_release"],lyr:["none_instrumental"]},{t:"Spirit of Life",a:"Blackmill",g:"chillstep",pg:"electronic",yr:2011,ar:.55,va:.55,de:.65,gems:[.5,.45,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["build_release","four_floor","ostinato"],lyr:["transcendence"]},{t:"Flaming Pie",a:"Paul McCartney",g:"rock",pg:"rock",yr:1997,ar:.6,va:.65,de:.6,gems:[.3,.55,.2],tim:["distortion","keys","clean_bass","acoustic"],str:["build_release","syncopation_med"],lyr:["joy_celebration","narrative"]},{t:"Stick Season",a:"Noah Kahan",g:"folk-pop",pg:"folk",yr:2022,ar:.55,va:.45,de:.7,gems:[.4,.4,.35],tim:["acoustic","hand_perc","airy_vocals"],str:["build_release","crescendo","vocal_entrance"],lyr:["longing","introspection","narrative"]},{t:"Come Alive",a:"Cannons",g:"dream-pop",pg:"pop",yr:2022,ar:.6,va:.6,de:.55,gems:[.35,.55,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["longing","joy_celebration"]},{t:"Strangers",a:"Cannons",g:"dream-pop",pg:"pop",yr:2019,ar:.55,va:.55,de:.55,gems:[.4,.5,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["longing"]},{t:"Fire for You",a:"Cannons",g:"dream-pop",pg:"pop",yr:2019,ar:.55,va:.55,de:.58,gems:[.4,.5,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["longing","devotion"]},{t:"6's to 9's",a:"Big Wild",g:"electronic",pg:"electronic",yr:2019,ar:.65,va:.6,de:.55,gems:[.35,.55,.2],tim:["analog_synth","hand_perc","clean_bass","airy_vocals"],str:["four_floor","build_release","syncopation_med"],lyr:["longing"]},{t:"When I Get There",a:"Big Wild",g:"electronic",pg:"electronic",yr:2019,ar:.65,va:.65,de:.55,gems:[.4,.55,.15],tim:["analog_synth","hand_perc","airy_vocals","clean_bass"],str:["four_floor","build_release"],lyr:["longing","transcendence"]},{t:"Hexie Mountains",a:"Orville Peck",g:"alt-country",pg:"country",yr:2019,ar:.4,va:.4,de:.65,gems:[.5,.3,.35],tim:["distortion","acoustic","airy_vocals"],str:["build_release","sparse"],lyr:["longing","introspection","narrative"]},{t:"Construção",a:"Chico Buarque",g:"mpb",pg:"latin",yr:1971,ar:.55,va:.35,de:.9,gems:[.65,.35,.5],tim:["strings","brass","hand_perc","acoustic"],str:["build_release","crescendo","motif_transform"],lyr:["narrative","defiance","introspection"]},{t:"Secret Life",a:"Fred again..",g:"house",pg:"electronic",yr:2023,ar:.7,va:.5,de:.6,gems:[.35,.55,.25],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release","vocal_entrance"],lyr:["longing","introspection"]},{t:"Berwyn",a:"Fred again..",g:"electronic",pg:"electronic",yr:2021,ar:.6,va:.45,de:.65,gems:[.45,.45,.3],tim:["analog_synth","airy_vocals","clean_bass"],str:["build_release","vocal_entrance"],lyr:["longing","devotion","introspection"]},{t:"I Saw You",a:"Fred again..",g:"house",pg:"electronic",yr:2023,ar:.72,va:.55,de:.58,gems:[.3,.6,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["longing","social_bond"]},{t:"C'mon",a:"Fred again..",g:"house",pg:"electronic",yr:2023,ar:.8,va:.6,de:.55,gems:[.2,.7,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["joy_celebration","social_bond"]},{t:"Secret",a:"Fred again..",g:"house",pg:"electronic",yr:2023,ar:.72,va:.5,de:.58,gems:[.35,.55,.25],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release","vocal_entrance"],lyr:["longing","introspection"]},{t:"Enough",a:"Fred again..",g:"electronic",pg:"electronic",yr:2024,ar:.68,va:.5,de:.6,gems:[.4,.5,.25],tim:["analog_synth","airy_vocals","clean_bass"],str:["build_release","vocal_entrance"],lyr:["longing","introspection"]}];
+{t:"La Vida Breve",a:"Paco de Lucía",g:"flamenco",pg:"world",yr:1991,ar:.6,va:.55,de:.78,gems:[.5,.5,.3],tim:["acoustic","hand_perc"],str:["motif_transform","build_release","ostinato"],lyr:["none_instrumental"]},{t:"Nana",a:"Manuel de Falla",g:"classical-guitar",pg:"classical",yr:1914,ar:.25,va:.5,de:.8,gems:[.7,.1,.2],tim:["acoustic"],str:["sparse","motif_transform"],lyr:["none_instrumental"]},{t:"Chaconne",a:"J.S. Bach",g:"baroque",pg:"classical",yr:1720,ar:.4,va:.45,de:.92,gems:[.85,.15,.4],tim:["acoustic"],str:["ostinato","motif_transform","build_release","crescendo"],lyr:["none_instrumental"]},{t:"Asturias (Leyenda)",a:"Isaac Albéniz",g:"classical-guitar",pg:"classical",yr:1892,ar:.6,va:.45,de:.85,gems:[.6,.4,.35],tim:["acoustic"],str:["ostinato","build_release","motif_transform"],lyr:["none_instrumental"]},{t:"Recuerdos de la Alhambra",a:"Francisco Tárrega",g:"classical-guitar",pg:"classical",yr:1899,ar:.35,va:.45,de:.85,gems:[.8,.15,.3],tim:["acoustic"],str:["ostinato","motif_transform"],lyr:["none_instrumental"]},{t:"High Hopes",a:"Pink Floyd",g:"prog-rock",pg:"rock",yr:1994,ar:.45,va:.35,de:.85,gems:[.7,.25,.45],tim:["distortion","keys","strings","choir"],str:["build_release","crescendo","motif_transform"],lyr:["introspection","longing"]},{t:"The Show Must Go On",a:"Queen",g:"arena-rock",pg:"rock",yr:1991,ar:.65,va:.35,de:.85,gems:[.6,.35,.5],tim:["distortion","keys","choir","strings"],str:["build_release","crescendo"],lyr:["defiance","introspection"]},{t:"For the Love of God",a:"Steve Vai",g:"instrumental-rock",pg:"rock",yr:1990,ar:.65,va:.5,de:.8,gems:[.55,.4,.3],tim:["distortion"],str:["build_release","crescendo","motif_transform"],lyr:["none_instrumental"]},{t:"Tubular Bells",a:"Mike Oldfield",g:"prog-instrumental",pg:"rock",yr:1973,ar:.5,va:.5,de:.82,gems:[.55,.35,.3],tim:["keys","acoustic","distortion"],str:["ostinato","build_release","motif_transform"],lyr:["none_instrumental"]},{t:"Soldier, Poet, King",a:"The Oh Hellos",g:"indie-folk",pg:"folk",yr:2015,ar:.55,va:.5,de:.7,gems:[.4,.5,.3],tim:["acoustic","hand_perc","choir"],str:["build_release","crescendo","ostinato"],lyr:["narrative","defiance"]},{t:"Sleep Chamber",a:"Steve Roach",g:"ambient",pg:"electronic",yr:1988,ar:.15,va:.4,de:.8,gems:[.65,.05,.35],tim:["analog_synth"],str:["sparse","ostinato"],lyr:["none_instrumental"]},{t:"Fields of Gold",a:"Sting",g:"adult-pop",pg:"pop",yr:1993,ar:.4,va:.6,de:.7,gems:[.5,.35,.2],tim:["acoustic","keys"],str:["motif_transform","build_release"],lyr:["longing","devotion","narrative"]},{t:"Akaal",a:"Ajeet",g:"mantra",pg:"world",yr:2017,ar:.35,va:.55,de:.72,gems:[.7,.25,.2],tim:["airy_vocals","hand_perc","acoustic","strings"],str:["ostinato","build_release"],lyr:["devotion","transcendence"]},{t:"The Acclamation of Bonds",a:"Emperor",g:"symphonic-black-metal",pg:"metal",yr:2001,ar:.85,va:.3,de:.8,gems:[.4,.5,.7],tim:["distortion","dense","keys","choir"],str:["build_release","motif_transform"],lyr:["defiance","transcendence"]},{t:"A Moment of Clarity",a:"Death",g:"death-metal",pg:"metal",yr:1998,ar:.85,va:.3,de:.8,gems:[.35,.5,.7],tim:["distortion","dense"],str:["build_release","motif_transform"],lyr:["introspection","defiance"]},{t:"Ghost of Perdition",a:"Opeth",g:"prog-death-metal",pg:"metal",yr:2005,ar:.75,va:.35,de:.88,gems:[.45,.4,.6],tim:["distortion","dense","acoustic","keys"],str:["build_release","motif_transform","ostinato"],lyr:["narrative","introspection"]},{t:"Smoke of Many Fires",a:"Be'lakor",g:"melodic-death-metal",pg:"metal",yr:2012,ar:.8,va:.4,de:.82,gems:[.45,.45,.55],tim:["distortion","dense","keys"],str:["build_release","motif_transform","crescendo"],lyr:["introspection","narrative"]},{t:"House of Light",a:"Rivers of Nihil",g:"prog-death-metal",pg:"metal",yr:2021,ar:.8,va:.35,de:.85,gems:[.45,.4,.6],tim:["distortion","dense","brass","keys"],str:["build_release","motif_transform","syncopation_med"],lyr:["introspection","transcendence"]},{t:"Another Chance",a:"Oliver Heldens",g:"house",pg:"electronic",yr:2024,ar:.8,va:.6,de:.5,gems:[.25,.7,.2],tim:["analog_synth","clean_bass"],str:["four_floor","build_release"],lyr:["longing"]},{t:"Set Me Free",a:"Oliver Heldens",g:"house",pg:"electronic",yr:2023,ar:.8,va:.6,de:.5,gems:[.25,.7,.2],tim:["analog_synth","clean_bass"],str:["four_floor","build_release"],lyr:["longing","joy_celebration"]},{t:"Dracula (JENNIE Remix)",a:"Tame Impala & JENNIE",g:"psych-pop",pg:"pop",yr:2025,ar:.6,va:.5,de:.55,gems:[.3,.5,.3],tim:["analog_synth","airy_vocals"],str:["four_floor","build_release"],lyr:["longing"]},{t:"Sweet Talker",a:"Olly Alexander",g:"synth-pop",pg:"pop",yr:2024,ar:.7,va:.65,de:.5,gems:[.25,.65,.2],tim:["analog_synth","airy_vocals"],str:["four_floor"],lyr:["longing","joy_celebration"]},{t:"Rather Be",a:"Clean Bandit",g:"dance-pop",pg:"pop",yr:2014,ar:.7,va:.75,de:.55,gems:[.3,.7,.15],tim:["strings","analog_synth","clean_bass"],str:["four_floor","build_release","vocal_entrance"],lyr:["devotion","joy_celebration"]},{t:"Symphony",a:"Clean Bandit",g:"dance-pop",pg:"pop",yr:2017,ar:.65,va:.65,de:.6,gems:[.35,.6,.2],tim:["strings","analog_synth"],str:["four_floor","build_release","crescendo"],lyr:["devotion","longing"]},{t:"Watch Out for This (Bumaye)",a:"Major Lazer",g:"dancehall",pg:"electronic",yr:2013,ar:.85,va:.7,de:.5,gems:[.2,.75,.25],tim:["clean_bass","analog_synth","hand_perc","brass"],str:["four_floor","syncopation_med"],lyr:["joy_celebration","social_bond"]},{t:"Rosa",a:"Rainer Scheurenbrand",g:"classical-guitar",pg:"classical",yr:2005,ar:.3,va:.5,de:.72,gems:[.6,.15,.2],tim:["acoustic"],str:["sparse","motif_transform"],lyr:["none_instrumental"]},{t:"still feel.",a:"half·alive",g:"art-pop",pg:"pop",yr:2017,ar:.7,va:.65,de:.68,gems:[.3,.6,.25],tim:["clean_bass","keys","airy_vocals"],str:["syncopation_med","build_release","vocal_entrance"],lyr:["introspection","joy_celebration"]},{t:"What You Know",a:"Two Door Cinema Club",g:"indie-rock",pg:"rock",yr:2010,ar:.75,va:.8,de:.6,gems:[.25,.7,.15],tim:["distortion","clean_bass"],str:["syncopation_med","build_release"],lyr:["longing","joy_celebration"]},{t:"Spiderwebs",a:"No Doubt",g:"ska-punk",pg:"rock",yr:1995,ar:.8,va:.65,de:.6,gems:[.2,.7,.3],tim:["brass","distortion","clean_bass"],str:["syncopation_med","build_release"],lyr:["defiance","longing"]},{t:"Heaven Is a Place on Earth",a:"Lana Del Rey",g:"dream-pop",pg:"pop",yr:2020,ar:.35,va:.45,de:.68,gems:[.6,.25,.3],tim:["airy_vocals","strings","keys"],str:["sparse","build_release"],lyr:["longing","devotion"]},{t:"A Walk",a:"Tycho",g:"chillwave",pg:"electronic",yr:2011,ar:.5,va:.6,de:.65,gems:[.45,.4,.2],tim:["analog_synth","clean_bass","keys"],str:["ostinato","four_floor","build_release"],lyr:["none_instrumental"]},{t:"Spirit of Life",a:"Blackmill",g:"chillstep",pg:"electronic",yr:2011,ar:.55,va:.55,de:.65,gems:[.5,.45,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["build_release","four_floor","ostinato"],lyr:["transcendence"]},{t:"Flaming Pie",a:"Paul McCartney",g:"rock",pg:"rock",yr:1997,ar:.6,va:.65,de:.6,gems:[.3,.55,.2],tim:["distortion","keys","clean_bass","acoustic"],str:["build_release","syncopation_med"],lyr:["joy_celebration","narrative"]},{t:"Stick Season",a:"Noah Kahan",g:"folk-pop",pg:"folk",yr:2022,ar:.55,va:.45,de:.7,gems:[.4,.4,.35],tim:["acoustic","hand_perc","airy_vocals"],str:["build_release","crescendo","vocal_entrance"],lyr:["longing","introspection","narrative"]},{t:"Come Alive",a:"Cannons",g:"dream-pop",pg:"pop",yr:2022,ar:.6,va:.6,de:.55,gems:[.35,.55,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["longing","joy_celebration"]},{t:"Strangers",a:"Cannons",g:"dream-pop",pg:"pop",yr:2019,ar:.55,va:.55,de:.55,gems:[.4,.5,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["longing"]},{t:"Fire for You",a:"Cannons",g:"dream-pop",pg:"pop",yr:2019,ar:.55,va:.55,de:.58,gems:[.4,.5,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["longing","devotion"]},{t:"6's to 9's",a:"Big Wild",g:"electronic",pg:"electronic",yr:2019,ar:.65,va:.6,de:.55,gems:[.35,.55,.2],tim:["analog_synth","hand_perc","clean_bass","airy_vocals"],str:["four_floor","build_release","syncopation_med"],lyr:["longing"]},{t:"When I Get There",a:"Big Wild",g:"electronic",pg:"electronic",yr:2019,ar:.65,va:.65,de:.55,gems:[.4,.55,.15],tim:["analog_synth","hand_perc","airy_vocals","clean_bass"],str:["four_floor","build_release"],lyr:["longing","transcendence"]},{t:"Hexie Mountains",a:"Orville Peck",g:"alt-country",pg:"country",yr:2019,ar:.4,va:.4,de:.65,gems:[.5,.3,.35],tim:["distortion","acoustic","airy_vocals"],str:["build_release","sparse"],lyr:["longing","introspection","narrative"]},{t:"Construção",a:"Chico Buarque",g:"mpb",pg:"latin",yr:1971,ar:.55,va:.35,de:.9,gems:[.65,.35,.5],tim:["strings","brass","hand_perc","acoustic"],str:["build_release","crescendo","motif_transform"],lyr:["narrative","defiance","introspection"]},{t:"Secret Life",a:"Fred again..",g:"house",pg:"electronic",yr:2023,ar:.7,va:.5,de:.6,gems:[.35,.55,.25],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release","vocal_entrance"],lyr:["longing","introspection"]},{t:"Berwyn",a:"Fred again..",g:"electronic",pg:"electronic",yr:2021,ar:.6,va:.45,de:.65,gems:[.45,.45,.3],tim:["analog_synth","airy_vocals","clean_bass"],str:["build_release","vocal_entrance"],lyr:["longing","devotion","introspection"]},{t:"I Saw You",a:"Fred again..",g:"house",pg:"electronic",yr:2023,ar:.72,va:.55,de:.58,gems:[.3,.6,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["longing","social_bond"]},{t:"C'mon",a:"Fred again..",g:"house",pg:"electronic",yr:2023,ar:.8,va:.6,de:.55,gems:[.2,.7,.2],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["joy_celebration","social_bond"]},{t:"Secret",a:"Fred again..",g:"house",pg:"electronic",yr:2023,ar:.72,va:.5,de:.58,gems:[.35,.55,.25],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release","vocal_entrance"],lyr:["longing","introspection"]},{t:"Enough",a:"Fred again..",g:"electronic",pg:"electronic",yr:2024,ar:.68,va:.5,de:.6,gems:[.4,.5,.25],tim:["analog_synth","airy_vocals","clean_bass"],str:["build_release","vocal_entrance"],lyr:["longing","introspection"]},{t:"Star to Fall (Star2Fall)",a:"Cabin Crew",g:"dance",pg:"electronic",yr:2005,ar:.8,va:.7,de:.45,gems:[.2,.7,.15],tim:["analog_synth","clean_bass","airy_vocals"],str:["four_floor","build_release"],lyr:["longing","devotion"]},{t:"A Rose in the Wind",a:"Anggun",g:"world-pop",pg:"pop",yr:1998,ar:.5,va:.5,de:.68,gems:[.55,.35,.25],tim:["airy_vocals","strings","hand_perc","acoustic"],str:["build_release","crescendo"],lyr:["longing","transcendence"]},{t:"Live Again",a:"Kukunari",g:"dark-folk",pg:"folk",yr:2025,ar:.4,va:.4,de:.68,gems:[.55,.2,.4],tim:["acoustic","airy_vocals"],str:["sparse","build_release"],lyr:["introspection","longing"]},{t:"The Story Goes",a:"Lightning Seeds",g:"indie-pop",pg:"pop",yr:2009,ar:.5,va:.5,de:.6,gems:[.35,.45,.25],tim:["keys","clean_bass","acoustic"],str:["build_release"],lyr:["narrative","introspection"]},{t:"Eye in the Sky",a:"The Alan Parsons Project",g:"soft-rock",pg:"rock",yr:1982,ar:.45,va:.5,de:.7,gems:[.45,.35,.3],tim:["keys","clean_bass","airy_vocals"],str:["ostinato","build_release","vocal_entrance"],lyr:["introspection","longing"]},{t:"C'mon People (We're Making It Now)",a:"Richard Ashcroft",g:"britpop",pg:"rock",yr:2000,ar:.6,va:.7,de:.65,gems:[.4,.55,.15],tim:["strings","brass","acoustic","keys"],str:["build_release","crescendo"],lyr:["joy_celebration","social_bond","defiance"]}];
 
 /* =================================================================
    STATE + BUILDER UI
@@ -1505,12 +1506,12 @@ function renderResults(q){
   if(!hits.length){
     const near=closestMatches(q,6);
     if(!near.length){
-      resultsEl.innerHTML='<div class="nohit">No match \u2014 try the artist\u2019s name, or a song that sounds similar.</div>';
+      resultsEl.innerHTML='<div class="nohit">No match: try the artist\u2019s name, or a song that sounds similar.</div>';
       resultsEl.classList.add("open");return;
     }
     const hdr=document.createElement("div");
     hdr.className="near-hdr";
-    hdr.textContent="Not in the library \u2014 closest matches. Pick whichever sounds nearest:";
+    hdr.textContent="Not in the library, closest matches. Pick whichever sounds nearest:";
     resultsEl.appendChild(hdr);
     near.forEach(({s,i})=>{
       const el=document.createElement("div");
@@ -1647,6 +1648,21 @@ function loadState(){
 const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;
 const clamp=(x,lo=0,hi=100)=>Math.max(lo,Math.min(hi,x));
 const band=(x,a,b)=>x<a?0:x<b?1:2;          // -> 0 lo / 1 mid / 2 hi
+
+/* ---- Percentile calibration: quantile tables measured from 12,000 realistic lists
+   drawn from this song library (random, genre-coherent, and two-genre blends).
+   pct(key, value) -> where this value falls among listeners, 0..100. ---- */
+const PCT={"O":[69.663,76.83,78.266,79.316,80.239,81.031,81.854,82.642,83.37,84.108,84.867,85.534,86.312,87.061,87.831,88.824,89.885,91.188,92.85,94.951,100],"Ex":[24.621,39.545,43.232,45.828,47.989,49.979,51.789,53.496,54.926,56.324,57.63,58.964,60.269,61.651,63.103,64.726,66.541,68.748,71.542,75.789,100],"Ag":[6.441,21.636,34.994,41.747,46.099,49.48,52.269,54.574,56.87,58.711,60.451,62.128,63.827,65.28,66.636,67.898,69.137,70.539,72.099,74.356,81.492],"Co":[20.656,44.176,48.459,50.864,52.52,53.934,55.135,56.139,57.038,57.927,58.823,59.621,60.426,61.3,62.234,63.184,64.209,65.296,66.659,68.584,81.856],"Ne":[23.912,29.992,31.56,32.708,33.897,34.994,36.075,37.128,38.343,39.55,40.766,42.098,43.352,44.84,46.531,48.527,51.236,55.29,60.025,70.446,91.481],"Abs":[31.186,42.456,47.342,51.167,53.694,56.033,58.137,59.811,61.35,62.778,64.303,65.796,67.231,68.789,70.306,72.148,73.803,75.822,78.88,82.459,92.313],"E":[0.167,0.28,0.342,0.375,0.396,0.412,0.427,0.441,0.454,0.466,0.478,0.491,0.503,0.517,0.534,0.553,0.576,0.611,0.655,0.717,0.896],"S":[0.246,0.443,0.47,0.485,0.497,0.507,0.517,0.524,0.533,0.542,0.551,0.56,0.57,0.58,0.591,0.605,0.619,0.64,0.67,0.73,0.93],"lean":[-0.537,-0.206,-0.143,-0.099,-0.062,-0.034,-0.01,0.011,0.03,0.049,0.068,0.086,0.105,0.125,0.147,0.174,0.205,0.247,0.308,0.45,0.665],"ar":[0.3,0.481,0.519,0.55,0.569,0.585,0.6,0.61,0.621,0.631,0.643,0.65,0.662,0.675,0.683,0.696,0.712,0.73,0.755,0.81,0.92],"va":[0.28,0.472,0.512,0.533,0.55,0.567,0.578,0.588,0.6,0.609,0.619,0.628,0.637,0.65,0.657,0.669,0.68,0.694,0.712,0.736,0.86],"de":[0.56,0.633,0.65,0.662,0.671,0.678,0.683,0.69,0.695,0.7,0.707,0.713,0.719,0.725,0.731,0.738,0.75,0.756,0.775,0.806,0.904],"subP":[0.049,0.127,0.159,0.18,0.195,0.208,0.219,0.229,0.239,0.247,0.257,0.266,0.274,0.284,0.294,0.307,0.322,0.344,0.377,0.427,0.614],"vitP":[0.243,0.448,0.482,0.502,0.517,0.53,0.542,0.552,0.562,0.571,0.579,0.588,0.596,0.605,0.614,0.622,0.632,0.644,0.661,0.683,0.826],"uneP":[0.037,0.075,0.091,0.101,0.11,0.118,0.124,0.132,0.138,0.145,0.151,0.159,0.167,0.175,0.184,0.195,0.209,0.228,0.253,0.298,0.474],"sssExperience":[35.236,45.446,47.984,49.953,51.829,53.666,55.083,56.385,57.696,59.093,60.482,62.057,63.805,66.707,74.169,78.805,81.733,84.206,86.816,89.784,100],"sssThrill":[32.161,42.978,45.283,47.388,49.281,50.926,52.539,54.169,55.898,57.666,59.456,61.404,63.254,65.34,67.805,70.75,74.303,79.215,86.881,100,100],"spreadVal":[0.055,0.186,0.207,0.223,0.235,0.246,0.256,0.265,0.273,0.283,0.291,0.301,0.31,0.319,0.33,0.34,0.352,0.366,0.385,0.412,0.567],"buildDensity":[0.067,0.292,0.333,0.333,0.37,0.375,0.389,0.417,0.417,0.433,0.444,0.458,0.467,0.485,0.5,0.5,0.542,0.556,0.583,0.625,0.741],"chillsDensity":[0,0.125,0.25,0.333,0.375,0.429,0.5,0.5,0.556,0.6,0.625,0.636,0.667,0.727,0.75,0.8,0.833,0.875,0.889,1,1],"decades":[0,3,3,4,4,4,5,5,5,5,6,6,6,6,7,7,8,11,15,27,35],"pgSpread":[0.1,0.1,0.111,0.125,0.143,0.167,0.2,0.2,0.25,0.25,0.25,0.25,0.25,0.25,0.571,0.636,0.7,0.75,0.8,0.857,1],"bmrq.seeking":[32.279,37.559,39.242,40.881,42.653,44.265,45.673,46.963,48.38,49.404,50.566,52.343,55.101,55.614,64.545,68.904,72.076,74.522,77.376,80.815,89.039],"bmrq.emotion":[32.379,44.615,48.653,51.521,53.643,55.407,57.024,58.365,59.619,60.818,62.108,63.245,64.41,65.676,66.91,68.388,70.043,72.028,74.478,78.292,91.379],"bmrq.mood":[50.2,59.718,62.235,63.831,65.121,66.017,66.863,67.58,68.263,68.885,69.473,70.085,70.702,71.373,72.02,72.701,73.487,74.429,75.56,77.37,88.125],"bmrq.sensory":[27,33.5,37.5,40.313,42.643,44.1,45.75,47.313,48.542,49.9,51.333,52.583,53.917,55.375,57,58.625,60.75,63,65.763,70.188,98.9],"bmrq.social":[23.61,27.259,28.4,30.008,32.54,33.696,34.713,35.96,37.411,38.721,39.811,40.88,42.166,43.815,45.121,46.519,48.297,50.942,53.263,57.741,80.412],"music.mellow":[23.069,34.036,40.35,43.781,46.011,47.888,49.58,51.139,52.533,53.81,55.1,56.369,57.788,59.36,61.066,63.017,65.52,68.837,73.428,79.682,97.071],"music.unpretentious":[25.8,28.243,29.014,29.529,30.171,31.2,32.744,33.836,35.417,37.075,38.986,40.883,43.35,46.82,49.44,52.675,59.788,67.125,72.112,86.225,98.9],"music.sophisticated":[43.76,47.133,47.9,48.475,49.05,49.338,49.625,49.944,50.43,50.775,51.12,51.637,52.117,52.756,53.587,54.737,56.442,59.544,69.213,72.375,93.584],"music.intense":[30.016,37.793,40.227,41.899,43.411,44.916,46.402,47.846,49.233,50.728,52.25,53.829,55.346,57.086,58.992,61.396,64.541,68.47,73.335,85.376,98.998],"music.contemporary":[18,21.413,24.863,28.025,31.63,34.271,36.404,38.2,39.8,41.281,42.687,44.314,45.996,47.763,49.473,51.354,53.5,55.853,58.561,62.92,81],"F.distortion":[0,0,0,0,0,0,0.111,0.125,0.143,0.167,0.222,0.25,0.286,0.333,0.375,0.444,0.5,0.5,0.714,1,1],"F.clean_bass":[0,0.167,0.333,0.429,0.5,0.5,0.583,0.625,0.636,0.667,0.714,0.75,0.75,0.8,0.833,0.875,0.875,0.9,1,1,1],"F.airy_vocals":[0,0,0,0,0,0,0.083,0.111,0.125,0.125,0.143,0.167,0.2,0.25,0.25,0.286,0.333,0.375,0.417,0.5,1],"F.strings":[0,0,0,0,0,0,0,0.1,0.125,0.125,0.125,0.167,0.182,0.222,0.25,0.273,0.333,0.375,0.429,0.556,1],"F.four_floor":[0,0,0,0,0,0,0,0,0,0.1,0.125,0.125,0.143,0.182,0.222,0.25,0.286,0.333,0.4,0.5,1],"F.ostinato":[0,0.25,0.333,0.375,0.4,0.444,0.5,0.5,0.545,0.571,0.625,0.625,0.636,0.667,0.75,0.75,0.8,0.875,0.875,1,1],"F.sparse":[0,0,0,0,0,0,0,0,0,0.083,0.1,0.125,0.125,0.125,0.143,0.167,0.2,0.25,0.286,0.375,1],"F.hand_perc":[0,0,0,0,0,0,0.1,0.125,0.125,0.143,0.167,0.2,0.25,0.25,0.286,0.333,0.375,0.429,0.5,0.625,1],"F.choir":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.091,0.125,0.143,0.25,1],"F.analog_synth":[0,0,0,0,0,0,0,0.111,0.125,0.143,0.182,0.222,0.25,0.273,0.333,0.364,0.375,0.444,0.5,0.625,1],"F.acoustic":[0,0,0,0,0,0,0,0,0.111,0.125,0.125,0.143,0.167,0.2,0.25,0.273,0.333,0.4,0.5,0.7,1],"F.dense":[0,0,0,0,0,0,0,0.091,0.125,0.125,0.125,0.167,0.2,0.25,0.25,0.286,0.333,0.375,0.5,0.6,1],"F.keys":[0,0,0.125,0.143,0.2,0.25,0.25,0.286,0.333,0.375,0.375,0.417,0.444,0.5,0.5,0.571,0.625,0.667,0.75,0.875,1],"LY.longing":[0,0,0,0.111,0.125,0.143,0.182,0.222,0.25,0.25,0.286,0.333,0.375,0.375,0.4,0.444,0.5,0.5,0.6,0.667,1],"LY.introspection":[0,0,0,0,0,0.1,0.125,0.125,0.125,0.167,0.182,0.222,0.25,0.25,0.286,0.333,0.375,0.375,0.429,0.5,1],"LY.transcendence":[0,0,0,0,0,0,0,0,0,0,0.091,0.111,0.125,0.125,0.143,0.167,0.2,0.25,0.333,0.5,1],"LY.none_instrumental":[0,0,0,0,0,0,0,0,0,0,0,0,0.091,0.111,0.125,0.167,0.222,0.273,0.375,0.5,1],"LY.defiance":[0,0,0,0,0.111,0.125,0.125,0.143,0.182,0.2,0.25,0.25,0.273,0.3,0.333,0.375,0.4,0.455,0.5,0.625,1],"LY.devotion":[0,0,0,0,0,0,0.091,0.111,0.125,0.125,0.125,0.167,0.182,0.2,0.25,0.25,0.286,0.333,0.375,0.444,1],"LY.narrative":[0,0,0,0,0,0,0.091,0.111,0.125,0.125,0.143,0.167,0.2,0.222,0.25,0.25,0.3,0.364,0.375,0.5,1],"LY.joy_celebration":[0,0,0,0,0,0.091,0.111,0.125,0.125,0.143,0.167,0.2,0.25,0.25,0.25,0.3,0.333,0.375,0.4,0.5,1],"LY.social_bond":[0,0,0,0,0,0,0,0,0,0,0,0,0.091,0.111,0.125,0.125,0.125,0.167,0.2,0.25,0.667]};
+function pct(key,v){
+  const q=PCT[key]; if(!q) return null;
+  if(v<=q[0])return 0; if(v>=q[20])return 100;
+  let i=0; while(i<20&&q[i+1]<v)i++;
+  const span=q[i+1]-q[i];
+  return Math.round((i + (span>0?(v-q[i])/span:0.5))*5);
+}
+const band5=x=>x<10?0:x<35?1:x<65?2:x<90?3:4;
+const band3=x=>x<33?0:x<67?1:2;
+
 const pick=arr=>arr[Math.random()*arr.length|0];
 const has=(s,tag)=>s.tim.includes(tag)||s.str.includes(tag);
 function freq(songs,tag){return songs.filter(s=>has(s,tag)).length/songs.length;}
@@ -1740,9 +1756,47 @@ function analyze(songs){
   // Trait scores are kept on one shared raw scale so the bars stay comparable to each
   // other (the report frames them as a within-person profile: "Openness is your strongest
   // read"). Per-trait normalization was removed because it scrambled that ordering.
+  // ---- taste-cloud geometry: spread + two-cluster (multimodality) detection ----
+  // Each song as a point in feeling-space; measures how wide the cloud is and
+  // whether the list has two stable "homes" rather than one center.
+  const vecs=songs.map(s=>[s.ar,s.va,s.de,s.gems[0],s.gems[1],s.gems[2]]);
+  const dist=(a,b)=>Math.sqrt(a.reduce((t,x,i)=>t+(x-b[i])*(x-b[i]),0));
+  const centroid=vs=>vs[0].map((_,i)=>mean(vs.map(v=>v[i])));
+  const C0=centroid(vecs);
+  const spreadVal=mean(vecs.map(v=>dist(v,C0)));
+  let multimodal=false, clusterInfo=null;
+  if(n>=6){
+    // deterministic 2-means: seed with the two farthest-apart songs
+    let mi=0,mj=1,md=-1;
+    for(let i=0;i<vecs.length;i++)for(let j=i+1;j<vecs.length;j++){const d=dist(vecs[i],vecs[j]);if(d>md){md=d;mi=i;mj=j;}}
+    let cA=vecs[mi].slice(),cB=vecs[mj].slice(),asg=[];
+    for(let it=0;it<8;it++){
+      asg=vecs.map(v=>dist(v,cA)<=dist(v,cB)?0:1);
+      const gA=vecs.filter((_,i)=>asg[i]===0),gB=vecs.filter((_,i)=>asg[i]===1);
+      if(!gA.length||!gB.length)break;
+      cA=centroid(gA);cB=centroid(gB);
+    }
+    const gA=vecs.filter((_,i)=>asg[i]===0),gB=vecs.filter((_,i)=>asg[i]===1);
+    if(gA.length&&gB.length){
+      const within=mean([...gA.map(v=>dist(v,cA)),...gB.map(v=>dist(v,cB))]);
+      const sep=dist(cA,cB);
+      const share=Math.min(gA.length,gB.length)/n;
+      const laneOf=c=>[c[3],c[4],c[5]].indexOf(Math.max(c[3],c[4],c[5]));
+      const differs = laneOf(cA)!==laneOf(cB) || Math.abs(cA[0]-cB[0])>=.22;
+      multimodal = Math.min(gA.length,gB.length)>=3 && share>=.3 && sep>1.6*Math.max(within,.06) && differs;
+      const desc=c=>{
+        const g=[c[3],c[4],c[5]]; const lane=["sublimity","vitality","unease"][g.indexOf(Math.max(...g))];
+        return (c[0]<.45?"low-energy ":c[0]>.62?"high-energy ":"mid-energy ")+lane;
+      };
+      clusterInfo={a:{n:gA.length,label:desc(cA),songs:songs.filter((_,i)=>asg[i]===0).map(s=>s.t)},
+                   b:{n:gB.length,label:desc(cB),songs:songs.filter((_,i)=>asg[i]===1).map(s=>s.t)}};
+    }
+  }
+
   return {n,ar,va,de,deVar,pgSpread,pgGenres:[...pgSet],eras,eraAvail,yrMean,decades,contempLean,
           subP,vitP,uneP,F,LY,buildDensity,chillsDensity,
-          E,S,lean,O,Ex,Ag,Co,Ne,Abs,aggression,sssExperience,sssThrill,bmrq,music,heLean,lane,yes,songs};
+          E,S,lean,O,Ex,Ag,Co,Ne,Abs,aggression,sssExperience,sssThrill,bmrq,music,heLean,lane,yes,songs,
+          spreadVal,multimodal,clusterInfo};
 }
 
 /* =================================================================
@@ -1794,36 +1848,95 @@ function journeyProse(p){
   const peak = p.lane==="sublimity"
     ? "a vertical bloom (choir, strings, the ceiling lifting off)"
     : "a horizontal surge (drums, bass, the body locking into the grid)";
-  return `Your favorites tend to run the same screenplay: orientation (a motif or pulse tells your brain where it is), invitation (air and warmth, the song earning your trust), accretion (layers, width, something gathering), a widening horizon (it's coming), and arrival, for you, usually ${peak}, then afterglow, room to come down instead of a hard stop. You don't just want a peak; you want to be walked up to it and let down gently.`;
+  return `Your favorites run this arc: orientation (a motif or pulse tells your brain where it is), invitation (air and warmth, the song earning your trust), accretion (layers, width, something gathering), a widening horizon (it's coming), and arrival, for you, usually ${peak}, then afterglow, room to come down instead of a hard stop. You don't just want a peak; you want to be walked up to it and let down gently.`;
 }
 
 function traitNote(key,v){
-  const b=band(v,40,66);
+  // Notes are percentile-banded: "high" means high relative to other listeners,
+  // measured against this library's real output distribution, not the raw 0-100 axis.
+  const P=pct(key,v); const b=band5(P===null?v:P);
   const banks={
-    O:["a measured, familiar-leaning openness; you like the new, but you like it within reach","clearly above average, real aesthetic curiosity and an easy tolerance for complexity","the high end of the scale: aesthetic sensitivity and artistic hunger are the single cleanest read in your list"],
-    Ex:["selectively inward, luminous solitude over collective noise; you recharge in the quiet","ambiverted and weather-dependent, communion when there's altitude to it, gone quiet the rest of the time","an outward, uplift-seeking streak, you like shared activation and the confidence of a room moving together"],
-    Ag:["a guarded warmth, a song doesn't have to be tender to win you","an empathic tilt, pulled toward sincerity and anything that lets its guard down","a strong pull toward warmth and emotional honesty over anything armored or cool"],
-    Co:["loose and exploratory more than built, you wander rather than file","a quiet taste for order and follow-through, shape over sprawl","a real appetite for architecture, earned tension, release placed on purpose, nothing sprayed around"],
-    Ne:["low musical Unease: you transform intensity instead of amplifying it, walking in calm and leaving calmer","moderate, you'll let tension in, but you keep it cradled in something beautiful","a genuine pull toward tension and unease, you don't flinch from the dark, you go meet it"],
-    Abs:["more witness than swept-away, you assess a song at least as much as you fall into it","a real capacity to get pulled under by the right track","high absorption, you get swallowed whole rather than judging from the shore, and your list is loaded with chills triggers"]
+    O:["near the floor for openness: comfort, familiarity, and the proven pick over the new",
+       "a familiar-leaning openness; the new is welcome when it stays within reach",
+       "typical aesthetic curiosity: some appetite for complexity without chasing it",
+       "clearly above most listeners: real aesthetic curiosity and an easy tolerance for complexity",
+       "the top of the distribution: aesthetic sensitivity and artistic hunger stronger than nearly any listener"],
+    Ex:["firmly inward: solitude-coded listening, almost nothing built for a crowd",
+        "selectively inward, luminous solitude over collective noise",
+        "ambiverted and weather-dependent: communion when there is altitude to it, quiet the rest of the time",
+        "an outward, uplift-seeking streak: shared activation and a room moving together",
+        "among the most outward lists we see: nearly everything here is social fuel"],
+    Ag:["an armored taste: edge, confrontation, and cool distance over tenderness",
+        "a guarded warmth: a song does not have to be tender to win you",
+        "an even mix of warmth and edge, sincerity welcome but not required",
+        "an empathic tilt, pulled toward sincerity and anything that lets its guard down",
+        "a strong pull toward warmth and emotional honesty over anything armored or cool"],
+    Co:["loose and exploratory: you wander rather than file",
+        "more drift than architecture, form worn lightly",
+        "a quiet taste for order and follow-through, shape over sprawl",
+        "a clear appetite for architecture: earned tension, release placed on purpose",
+        "at the structured extreme: precision-built music, nothing sprayed around"],
+    Ne:["among the lowest unease readings: you transform intensity, walking in calm and leaving calmer",
+        "low musical unease, tension allowed in only when resolved",
+        "moderate: you let tension in, but keep it cradled in something beautiful",
+        "a genuine pull toward tension and unease, you go meet the dark rather than flinch",
+        "the deep end of the scale: darkness and dissonance are the point, not the price"],
+    Abs:["more witness than swept away: you assess a song at least as much as you fall into it",
+        "grounded listening with occasional undertow",
+        "a real capacity to get pulled under by the right track",
+        "high absorption: the right song swallows you whole",
+        "extreme absorption, a list loaded with chills triggers and total-immersion builds"]
   };
   return banks[key][b];
 }
 
 function oneLiner(p){
-  const F=p.F||{};
-  // State the single dominant pattern the list shows, plainly, framed as a reading. One emphasized term.
-  if(p.uneP>.4 || (p.aggression||0)>.42)
-    return `Your list reads <em>intensity-first</em>: it leans toward tension and force over comfort.`;
-  if(p.chillsDensity>.5 && p.subP>=p.vitP && p.de>.7)
-    return `Your list reads <em>build-driven</em>: it favors the slow rise and release over the immediate hook.`;
-  if(p.vitP>p.subP && p.ar>.6)
-    return `Your list reads <em>motion-first</em>: it is organized around rhythm and pull more than resolution.`;
-  if(p.pgSpread>.6 || p.O>72)
-    return `Your list reads <em>genre-agnostic</em>: the through-line is emotional tone, not category.`;
-  if(p.de>.78)
-    return `Your list reads <em>depth-first</em>: it favors complexity and craft over accessibility.`;
-  return `Your list reads <em>feel-first</em>: it weights physical response ahead of craft or lyrics.`;
+  const F=p.F||{}, LY=p.LY||{};
+  // 36-cell headline grid: primary mode (argmax of 6 graded scores) x emotional
+  // coloring (argmax of 6). Each combination yields a distinct headline.
+  const primary={
+    intensity: p.uneP*1.0 + (p.aggression||0)*0.9 + Math.max(0,p.ar-.62)*.6,
+    build:     p.buildDensity*0.95 + p.chillsDensity*.55 + (p.subP>=p.vitP?.08:0),
+    depth:     Math.max(0,p.de-.58)*2.1,
+    breadth:   p.pgSpread*1.05 + (p.eras?.18:0) + p.deVar*.7,
+    motion:    p.vitP*.85 + (F.four_floor||0)*.5 + Math.max(0,p.ar-.55)*.5,
+    feel:      .5
+  };
+  const coloring={
+    euphoric:    Math.max(0,p.va-.6)*1.7 + p.vitP*.45,
+    warm:        Math.max(0,p.va-.5)*.9 + ((LY.devotion||0)+(LY.social_bond||0))*.9,
+    dark:        p.uneP*1.15 + Math.max(0,.45-p.va)*1.4,
+    melancholic: ((LY.longing||0)+(LY.introspection||0))*.75 + Math.max(0,.52-p.va)*.7 + p.subP*.35,
+    hypnotic:    ((F.ostinato||0)+(F.sparse||0))*.65 + p.subP*.5 + Math.max(0,.5-p.ar)*.75,
+    raw:         (F.distortion||0)*1.05 + (p.aggression||0)*.8
+  };
+  const top=o=>Object.entries(o).sort((a,b)=>b[1]-a[1])[0][0];
+  const pri=top(primary), col=top(coloring);
+  const base={
+    intensity:"Your list reads <em>intensity-first</em>",
+    build:"Your list reads <em>build-driven</em>",
+    depth:"Your list reads <em>depth-first</em>",
+    breadth:"Your list reads <em>genre-agnostic</em>",
+    motion:"Your list reads <em>motion-first</em>",
+    feel:"Your list reads <em>feel-first</em>"
+  };
+  const colorClause={
+    euphoric:" with a euphoric cast",
+    warm:" in warm tones",
+    dark:" running dark",
+    melancholic:" with a melancholic undertow",
+    hypnotic:" with a hypnotic pulse",
+    raw:" with raw edges"
+  };
+  const tail={
+    intensity:"tension and force are weighted over comfort",
+    build:"the slow rise and release is favored over the immediate hook",
+    depth:"complexity and craft are favored over accessibility",
+    breadth:"the through-line is emotional tone, not category",
+    motion:"it is organized around rhythm and pull more than resolution",
+    feel:"physical response is weighted ahead of craft or lyrics"
+  };
+  return base[pri]+colorClause[col]+": "+tail[pri]+".";
 }
 
 /* Easter egg: specific song pairings unlock a hidden aside. */
@@ -1861,6 +1974,92 @@ function eggAlanis(p){
   return has("ironic")||has("you oughta know");
 }
 
+/* ---- Salience: which dimensions are most unusual for THIS list, vs listeners at large. */
+const DIMS=[
+ ["O","Openness","O"],["Ag","Agreeableness","Ag"],["Co","Conscientiousness","Co"],["Ex","Extraversion","Ex"],["Ne","Neuroticism","Ne"],
+ ["E","empathizer timbre pull","E"],["S","systemizer form pull","S"],["lean","systemizer lean","lean"],
+ ["ar","energy preference","ar"],["va","brightness preference","va"],["de","depth appetite","de"],
+ ["subP","sublimity share","subP"],["vitP","vitality share","vitP"],["uneP","unease share","uneP"]
+];
+function salience(p){
+  return DIMS.map(([k,label])=>{const P=pct(k,p[k]);return {k,label,P,dev:P===null?0:Math.abs(P-50)};})
+    .filter(d=>d.P!==null).sort((a,b)=>b.dev-a.dev);
+}
+function exactSentence(p){
+  const parts=[];
+  const PO=pct("O",p.O)??50, PAbs=pct("Abs",p.Abs)??50, PEx=pct("Ex",p.Ex)??50;
+  if(PO>=90) parts.push("You likely score very high in Openness, especially aesthetic sensitivity and artistic interest");
+  else if(PO>=75) parts.push("You likely score high in Openness");
+  else if(PO<=25) parts.push("You likely favor the familiar over the novel");
+  else parts.push("Your Openness reads near the middle of the range");
+  if(PAbs>=75) parts.push("you have a strong capacity for absorption and chills");
+  parts.push("your listening style is "+(p.lean<-.2?"empathizer-leaning":p.lean>.2?"systemizer-leaning":"a hybrid of empathic timbre and structural form"));
+  parts.push("your social-energy signal is "+(PEx>=75?"outward and uplift-seeking":PEx<=25?"selectively inward":"ambiverted and state-dependent"));
+  parts.push("and you prefer "+(p.uneP<.35?"beauty, coherence, and uplift over antagonism or brute abrasion":"intensity and tension you can feel honestly"));
+  return parts.join("; ")+".";
+}
+function summaryLine(p){
+  const era = p.eraAvail&&p.decades>=2 ? (p.decades>7?", spanning well over half a century":", ~"+p.decades+" decades deep") : "";
+  const top=salience(p).slice(0,3);
+  const dir=d=>(d.P>=50?"high ":"low ")+d.label;
+  const sig = top.length&&top[0].dev>=20
+    ? "the clearest signals against other listeners are "+top.map(dir).join(", ")+"."
+    : "no single dimension is extreme; the signature is balance.";
+  return "Across "+p.n+" songs and "+p.pgGenres.length+" genres"+era+", "+sig;
+}
+function salienceLine(p){
+  const top=salience(p).slice(0,3).filter(d=>d.dev>=28);
+  if(!top.length) return "Measured against other listeners, no single dimension is extreme; the signature is the balance itself.";
+  const parts=top.map(d=>(d.P>=50?"unusually high ":"unusually low ")+d.label);
+  return "Measured against other listeners, what stands out most: "+parts.join(", ")+".";
+}
+
+/* ---- Banded notes for SSS / BMRQ / MUSIC: text now moves with the bar. ---- */
+function sssNote(key,v){
+  const b=band3(pct(key,v));
+  const banks={
+    sssExperience:["Range is narrow by choice: a known pocket, mined deep rather than wide.",
+      "A working appetite for the new, balanced against trusted ground.",
+      "Hunger for the new and the wide: you range far across genre, era, and depth."],
+    sssThrill:["Low appetite for volume and edge: intensity is not what you are here for.",
+      "Moderate intensity tolerance: loud is welcome when it earns its force.",
+      "Hunger for the loud and the edged: arousal, distortion, and unease you will sit in."]
+  };
+  return banks[key][b];
+}
+function bmrqNote(key,v){
+  const b=band3(pct("bmrq."+key,v));
+  const banks={
+    seeking:["Little urge to dig: the collection you have is the point.",
+      "A steady, occasional itch for new corners.",
+      "The itch to keep digging: new sounds, new corners, never quite finished."],
+    emotion:["Music sits beside your feelings more than it drives them.",
+      "Music reaches the feeling reliably, if not always instantly.",
+      "Music as a trapdoor straight to the feeling."],
+    mood:["You rarely use music as a tool on your own mood.",
+      "One dial among several for steadying a mood.",
+      "The first dial you reach for to lift, steady, or rescue a mood."],
+    sensory:["The body mostly sits this one out; listening stays above the neck.",
+      "Rhythm lands in the body when the groove insists.",
+      "The part that cannot sit still: rhythm landing straight in the body."],
+    social:["Listening reads as a private channel more than a shared one.",
+      "Songs shared sometimes, kept sometimes.",
+      "Songs as connective tissue: the lift of feeling it with other people."]
+  };
+  return banks[key][b];
+}
+function musicNote(key,v){
+  const b=band5(pct("music."+key,v));
+  const banks={
+    mellow:["almost no soft-focus listening here","low-flame moments are rare","a working share of soft-focus, easy-on-the-system sound","soft-focus and low-flame carry real weight here","one of the most mellow-leaning lists we see"],
+    unpretentious:["nothing plainspoken: every pick wears craft openly","sincerity mostly arrives dressed up","an even mix of plainspoken and constructed","sincere and plainspoken carries this list","almost entirely no-costume, direct address"],
+    sophisticated:["built for immediacy, not study","craft present but never the point","complexity welcome when it rewards attention","complex, crafted, built to reward close attention","at the sophisticated extreme: nearly everything here is study-grade"],
+    intense:["essentially no edge: force is absent by design","edge appears only in traces","a measured dose of loud and edged","loud, edged, made to hit","peak intensity: force is the organizing principle"],
+    contemporary:["a list that looks almost entirely backward","current sounds are the exception","a balanced now-and-then blend","current, rhythmic, made for now","almost wholly of-the-moment production"]
+  };
+  return banks[key][b];
+}
+
 /* A clinical, grounded read: states the measured tendencies plainly, no flourish. */
 function portrait(p){
   const depth = p.de>.78
@@ -1881,7 +2080,7 @@ function portrait(p){
     : p.uneP<.3
     ? "Your tolerance for darkness is low; even the sadder picks tend to resolve."
     : "You will sit with tension but generally want it resolved rather than left open.";
-  let txt = `${depth} ${lane} ${energy} ${shadow} ${archetype(p)}`;
+  let txt = `${depth} ${lane} ${energy} ${shadow} ${archetype(p)} ${salienceLine(p)}`;
   if(eggTriggered(p)) txt = txt.replace(/([;.])/, ", not to be confused with balls in holes$1");
   const extras=[];
   if(eggKyrie(p)) extras.push("You probably listened to the beginning of Kyrie over and over.");
@@ -1905,30 +2104,33 @@ function archetype(p){
 /* The uncanny engine: precise, behavioral, audiophile observations. Each fires ONLY when
    the listener's actual scores trigger it, so a hit reads as recognition rather than flattery. */
 function uncannyTells(p){
-  const F=p.F||{}, M=p.music||{}, LY=p.LY||{};
+  const F=p.F||{}, LY=p.LY||{};
+  // Every tell fires only when the driving dimension is genuinely unusual for this
+  // person vs other listeners (percentile-gated), so each one is a true signature.
+  const q=(k,v)=>pct(k,v)??50;
   const pool=[
-    [9, p.buildDensity>.5, "The part of a song that gets you is rarely the drop itself. It tends to be the bar before it, the riser and the held tension where everything is loaded and nothing has landed yet. The approach matters more to you than the release."],
-    [9, p.chillsDensity>.5 && p.Abs>56, "You return to specific moments in a song more than to whole songs. Often it is the second of suspension just before a swell resolves, when the feeling is gathering but has not arrived. That anticipation is most of the reward."],
-    [9, p.Abs>62, "Music does not sit in the background for you. When a passage lands it takes your full attention rather than accompanying something else, which is why it works better for feeling than for focus."],
-    [8, p.uneP>.4, "You tend to reach for music to feel something true rather than something pleasant. A song that softens a feeling to make it easier reads as less honest to you than one that stays with it."],
-    [8, (F.distortion>.3||p.ar>.74), "Loud reads as clarity to you more than as aggression. Dense, distorted sound tends to settle your attention rather than overwhelm it."],
-    [8, p.lean<-.25 && (F.airy_vocals>.3||F.strings>.3), "You register quickly whether a voice is performing or being honest, and you tend to lose interest in the performed kind."],
-    [8, p.lean>.25 && (F.four_floor>.3||F.ostinato>.4), "You tend to hear how a track is built before you hear its melody. A clumsy transition or a thin arrangement can lose you faster than an unmemorable hook, because structure is what you are tracking."],
-    [8, F.clean_bass>.35, "The low end matters more to you than you might say out loud. A strong melody over a weak bassline tends to register as a near miss, even when you cannot name what is missing."],
-    [8, p.de>.78 && p.subP>=p.vitP, "Your actual favorite is usually not the one you would dance to. It is the one that affected you the first time you heard it and still does."],
-    [8, LY.longing>.38, "Many of your favorites circle the same feeling, wanting something that stays out of reach. It is the theme you return to most."],
-    [7, p.uneP<.28 && p.va>.52, "Sad songs feel safe to you because you trust them to resolve. You will sit in a minor key comfortably, listening for the lift you can sense coming."],
-    [7, p.pgSpread>.6 || p.O>72, "Your taste is organized by feeling more than by genre. A choral piece and a hard electronic track can sit side by side for you because they share a mood, not a category."],
-    [7, p.decades>=4, "You don't believe music declined so much as that most listening got narrower. Your favorites span several decades, and the year a song came out carries little weight with you."],
-    [7, p.vitP>p.subP && p.ar>.62 && p.de<.66, "You read a song quickly and decisively. Within the first several seconds you tend to know whether it is worth the rest, and you move on without much hesitation when it is not."],
-    [7, p.Ex>62 && p.vitP>.32, "Music lands hardest for you when it is shared. A song you love alone is good, but the same song in a room moving together is closer to the point of it."],
-    [7, LY.introspection>.4, "Most of your favorites are inward. You tend to use music to think rather than to socialize, and you protect that kind of listening time."],
-    [7, LY.transcendence>.34, "A lot of your songs reach past themselves, toward something larger or close to sacred. You use music in a way that sits near how other people use stillness or prayer."],
-    [6, LY.none_instrumental>.4, "A real share of your favorites have no lyrics. You don't need a song to name the feeling for you. You would rather it leave space for your own."],
-    [6, LY.defiance>.34, "There is a thread of refusal running through your list, songs about standing firm or pushing back. You tend not to reach for music that only soothes."],
-    [6, F.sparse>.35 || M.mellow>60, "You need space in a mix. Dense overproduction tends to read as busy or anxious to you, and you trust arrangements that are willing to leave a gap."],
-    [6, LY.devotion>.4, "Your love songs lean steady rather than infatuated, closer to devotion than to a first rush. There is a constancy to what you return to."],
-    [6, F.hand_perc>.3 || M.unpretentious>58, "You tend to trust played sounds over programmed ones. A small human imperfection left in a take tends to make a track feel more right to you, not less."],
+    [9, q("buildDensity",p.buildDensity)>=78, "The part of a song that gets you is rarely the drop itself. It tends to be the bar before it, the riser and the held tension where everything is loaded and nothing has landed yet. The approach matters more to you than the release."],
+    [9, q("chillsDensity",p.chillsDensity)>=75 && q("Abs",p.Abs)>=60, "You return to specific moments in a song more than to whole songs. Often it is the second of suspension just before a swell resolves, when the feeling is gathering but has not arrived. That anticipation is most of the reward."],
+    [9, q("Abs",p.Abs)>=85, "Music does not sit in the background for you. When a passage lands it takes your full attention rather than accompanying something else, which is why it works better for feeling than for focus."],
+    [8, q("uneP",p.uneP)>=80, "You tend to reach for music to feel something true rather than something pleasant. A song that softens a feeling to make it easier reads as less honest to you than one that stays with it."],
+    [8, q("F.distortion",F.distortion||0)>=80 || q("ar",p.ar)>=88, "Loud reads as clarity to you more than as aggression. Dense, distorted sound tends to settle your attention rather than overwhelm it."],
+    [8, q("lean",p.lean)<=20 && (q("F.airy_vocals",F.airy_vocals||0)>=70||q("F.strings",F.strings||0)>=70), "You register quickly whether a voice is performing or being honest, and you tend to lose interest in the performed kind."],
+    [8, q("lean",p.lean)>=80 && (q("F.four_floor",F.four_floor||0)>=70||q("F.ostinato",F.ostinato||0)>=70), "You tend to hear how a track is built before you hear its melody. A clumsy transition or a thin arrangement can lose you faster than an unmemorable hook, because structure is what you are tracking."],
+    [8, q("F.clean_bass",F.clean_bass||0)>=80, "The low end matters more to you than you might say out loud. A strong melody over a weak bassline tends to register as a near miss, even when you cannot name what is missing."],
+    [8, q("de",p.de)>=82 && p.subP>=p.vitP, "Your actual favorite is usually not the one you would dance to. It is the one that affected you the first time you heard it and still does."],
+    [8, q("LY.longing",LY.longing||0)>=78, "Many of your favorites circle the same feeling, wanting something that stays out of reach. It is the theme you return to most."],
+    [7, q("uneP",p.uneP)<=25 && q("va",p.va)>=60, "Sad songs feel safe to you because you trust them to resolve. You will sit in a minor key comfortably, listening for the lift you can sense coming."],
+    [7, q("pgSpread",p.pgSpread)>=75 || q("O",p.O)>=85, "Your taste is organized by feeling more than by genre. A choral piece and a hard electronic track can sit side by side for you because they share a mood, not a category."],
+    [7, q("decades",p.decades)>=75 && p.decades>=4, "You don't believe music declined so much as that most listening got narrower. Your favorites span several decades, and the year a song came out carries little weight with you."],
+    [7, q("vitP",p.vitP)>=70 && q("ar",p.ar)>=70 && q("de",p.de)<=45, "You read a song quickly and decisively. Within the first several seconds you tend to know whether it is worth the rest, and you move on without much hesitation when it is not."],
+    [7, q("Ex",p.Ex)>=78 && p.vitP>.3, "Music lands hardest for you when it is shared. A song you love alone is good, but the same song in a room moving together is closer to the point of it."],
+    [7, q("LY.introspection",LY.introspection||0)>=75, "Most of your favorites are inward. You tend to use music to think rather than to socialize, and you protect that kind of listening time."],
+    [7, q("LY.transcendence",LY.transcendence||0)>=78, "A lot of your songs reach past themselves, toward something larger or close to sacred. You use music in a way that sits near how other people use stillness or prayer."],
+    [6, q("LY.none_instrumental",LY.none_instrumental||0)>=75, "A real share of your favorites have no lyrics. You don't need a song to name the feeling for you. You would rather it leave space for your own."],
+    [6, q("LY.defiance",LY.defiance||0)>=75, "There is a thread of refusal running through your list, songs about standing firm or pushing back. You tend not to reach for music that only soothes."],
+    [6, q("F.sparse",F.sparse||0)>=75 || q("music.mellow",p.music.mellow)>=80, "You need space in a mix. Dense overproduction tends to read as busy or anxious to you, and you trust arrangements that are willing to leave a gap."],
+    [6, q("LY.devotion",LY.devotion||0)>=78, "Your love songs lean steady rather than infatuated, closer to devotion than to a first rush. There is a constancy to what you return to."],
+    [6, q("F.hand_perc",F.hand_perc||0)>=75 || q("music.unpretentious",p.music.unpretentious)>=80, "You tend to trust played sounds over programmed ones. A small human imperfection left in a take tends to make a track feel more right to you, not less."],
   ];
   let hits=pool.filter(x=>x[1]).sort((a,b)=>b[0]-a[0]).map(x=>x[2]);
   if(hits.length<3){
@@ -1943,6 +2145,111 @@ function uncannyTells(p){
 /* =================================================================
    RENDER REPORT
    ================================================================= */
+/* ---- Visual builders: radar, dot-interval strip, song cloud, GEMS triangle.
+   All plot PERCENTILES vs other listeners, so shapes genuinely differ per person. ---- */
+function radarSVG(axes,size,maxW,labelPad){
+  const LP=labelPad||58;
+  const cx=size/2, cy=size/2+6, R=size/2-LP;
+  const pt=(i,r)=>{const a=-Math.PI/2+i*2*Math.PI/axes.length;return [cx+r*Math.cos(a),cy+r*Math.sin(a)];};
+  let g="";
+  [25,50,75,100].forEach(q=>{
+    const ring=axes.map((_,i)=>pt(i,R*q/100).map(x=>x.toFixed(1)).join(",")).join(" ");
+    g+='<polygon points="'+ring+'" fill="none" stroke="#4A4180" stroke-width="'+(q===50?1.3:0.8)+'"/>';});
+  axes.forEach((_,i)=>{const [x,y]=pt(i,R);g+='<line x1="'+cx+'" y1="'+cy+'" x2="'+x.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="#4A4180" stroke-width="0.8"/>';});
+  const poly=axes.map((a,i)=>pt(i,R*Math.max(3,a.P)/100).map(x=>x.toFixed(1)).join(",")).join(" ");
+  g+='<polygon points="'+poly+'" fill="url(#radGrad)" fill-opacity="0.28" stroke="var(--violet)" stroke-width="2" stroke-linejoin="round"/>';
+  axes.forEach((a,i)=>{const [x,y]=pt(i,R*Math.max(3,a.P)/100);g+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3" fill="var(--violet)"/>';});
+  axes.forEach((a,i)=>{const [x,y]=pt(i,R+16);
+    const anc=Math.abs(x-cx)<10?"middle":(x>cx?"start":"end");
+    g+='<text x="'+x.toFixed(1)+'" y="'+(y+4).toFixed(1)+'" text-anchor="'+anc+'" font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'+a.label+'</text>';});
+  const vTop=Math.max(0,cy-R-38), vH=(R+38)*2;
+  return '<svg class="journey-svg" style="max-width:'+(maxW||300)+'px;margin:0 auto;display:block" viewBox="0 '+vTop.toFixed(0)+' '+size+' '+vH.toFixed(0)+'" role="img" aria-label="radar chart">'
+    +'<defs><linearGradient id="radGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--cool)"/><stop offset=".55" stop-color="var(--violet)"/><stop offset="1" stop-color="var(--warm)"/></linearGradient></defs>'+g+'</svg>';
+}
+function fingerprintDims(p){
+  return [["O","O","Openness"],["Ag","A","Agreeableness"],["Co","C","Conscientiousness"],["Ex","E","Extraversion"],["Ne","N","Neuroticism"],
+    ["E","ET","Empathizer timbres"],["S","SF","Systemizer forms"],["lean","EL","E/S lean"],
+    ["ar","Ar","Arousal (energy)"],["va","Va","Valence (brightness)"],["de","De","Depth"],
+    ["subP","Su","Sublimity share"],["vitP","Vi","Vitality share"],["uneP","Un","Unease share"]].map(([k,label,name])=>({k,label,name,P:pct(k,p[k])??50}));
+}
+function dotStripSVG(dims){
+  const W=640,rowH=32,padT=28,L=248,R=620,H=padT+dims.length*rowH+8;
+  const X=P=>L+(R-L)*P/100;
+  let g='<text x="'+X(50)+'" y="14" text-anchor="middle" font-size="13" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
+  dims.forEach((d,i)=>{const y=padT+i*rowH+rowH/2;
+    g+='<text x="10" y="'+(y+4)+'" text-anchor="start" font-size="15" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
+    g+='<text x="48" y="'+(y+4)+'" text-anchor="start" font-size="14" fill="var(--muted)">'+(d.name||"")+'</text>';
+    g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
+    g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
+    g+='<line x1="'+X(50)+'" y1="'+(y-6)+'" x2="'+X(50)+'" y2="'+(y+6)+'" stroke="#554B92" stroke-width="1"/>';
+    g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="5" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
+  return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="percentile strip">'+g+'</svg>';
+}
+function cloudSVG(p){
+  const W=620,H=346,L=64,R=600,T=18,B=272;
+  const X=v=>L+(R-L)*v, Y=v=>B-(B-T)*v;
+  let g='<line x1="'+L+'" y1="'+B+'" x2="'+R+'" y2="'+B+'" stroke="#4A4180" stroke-width="1.2"/><line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+B+'" stroke="#4A4180" stroke-width="1.2"/>';
+  // quadrant territory names
+  g+='<g font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)" opacity="0.6">'
+    +'<text x="'+(L+10)+'" y="'+(T+16)+'">quiet &amp; deep</text>'
+    +'<text x="'+(R-8)+'" y="'+(T+16)+'" text-anchor="end">charged &amp; deep</text>'
+    +'<text x="'+(L+10)+'" y="'+(B-10)+'">quiet &amp; light</text>'
+    +'<text x="'+(R-8)+'" y="'+(B-10)+'" text-anchor="end">charged &amp; light</text></g>';
+  // axis pole labels
+  g+='<g font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)" opacity="0.75">'
+    +'<text x="'+L+'" y="'+(B+24)+'">calm</text><text x="'+R+'" y="'+(B+24)+'" text-anchor="end">high-energy</text>'
+    +'<text x="'+(L-8)+'" y="'+(B-2)+'" text-anchor="end">light</text><text x="'+(L-8)+'" y="'+(T+10)+'" text-anchor="end">deep</text></g>';
+  const col=s=>{const i=s.gems.indexOf(Math.max(...s.gems));return i===0?"var(--violet)":i===1?"var(--warm)":"var(--rose)";};
+  p.songs.forEach(s=>{g+='<circle cx="'+X(s.ar).toFixed(1)+'" cy="'+Y(s.de).toFixed(1)+'" r="5.5" fill="'+col(s)+'" fill-opacity="0.9" stroke="#0E0B1A" stroke-width="1"><title>'+s.t.replace(/&/g,"&amp;").replace(/</g,"&lt;")+' \u00b7 '+s.a.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</title></circle>';});
+  if(p.multimodal&&p.clusterInfo){
+    [p.clusterInfo.a,p.clusterInfo.b].forEach(c=>{
+      const pts=p.songs.filter(s=>c.songs.includes(s.t));
+      if(pts.length){const mx=pts.reduce((t,s)=>t+s.ar,0)/pts.length,my=pts.reduce((t,s)=>t+s.de,0)/pts.length;
+        g+='<circle cx="'+X(mx).toFixed(1)+'" cy="'+Y(my).toFixed(1)+'" r="26" fill="none" stroke="var(--muted)" stroke-dasharray="3 4" stroke-width="1"/>';}});
+  }
+  // legend row, centered below the plot (out of the data area)
+  const ly=B+52, lx=(L+R)/2;
+  g+='<g font-size="14" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'
+    +'<circle cx="'+(lx-160)+'" cy="'+(ly-4)+'" r="4.5" fill="var(--violet)"/><text x="'+(lx-149)+'" y="'+ly+'">sublimity</text>'
+    +'<circle cx="'+(lx-38)+'" cy="'+(ly-4)+'" r="4.5" fill="var(--warm)"/><text x="'+(lx-27)+'" y="'+ly+'">vitality</text>'
+    +'<circle cx="'+(lx+72)+'" cy="'+(ly-4)+'" r="4.5" fill="var(--rose)"/><text x="'+(lx+83)+'" y="'+ly+'">unease</text></g>';
+  return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="song cloud">'+g+'</svg>';
+}
+function ternarySVG(p){
+  const W=360,H=316;
+  const A=[W/2,26],B=[46,H-40],C=[W-46,H-40]; // A=sublimity(top) B=vitality(left) C=unease(right)
+  const tot=p.subP+p.vitP+p.uneP||1;
+  const s=p.subP/tot,v=p.vitP/tot,u=p.uneP/tot;
+  const px=s*A[0]+v*B[0]+u*C[0], py=s*A[1]+v*B[1]+u*C[1];
+  let g='<polygon points="'+A+' '+B+' '+C+'" fill="none" stroke="#554B92" stroke-width="1.3"/>';
+  [.25,.5,.75].forEach(f=>{
+    const m=(P,Q)=>[P[0]+(Q[0]-P[0])*f,P[1]+(Q[1]-P[1])*f];
+    [[m(A,B),m(A,C)],[m(B,A),m(B,C)],[m(C,A),m(C,B)]].forEach(([p1,p2])=>{
+      g+='<line x1="'+p1[0].toFixed(1)+'" y1="'+p1[1].toFixed(1)+'" x2="'+p2[0].toFixed(1)+'" y2="'+p2[1].toFixed(1)+'" stroke="#4A4180" stroke-width="0.6" opacity="0.9"/>';});});
+  g+='<circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="24" fill="none" stroke="var(--violet)" stroke-width="1" opacity="0.25"/>';
+  g+='<circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="15" fill="none" stroke="var(--violet)" stroke-width="1.2" opacity="0.5"/>';
+  g+='<circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="7" fill="var(--violet)" stroke="var(--text)" stroke-width="1.5"/>';
+  g+='<text x="'+A[0]+'" y="14" text-anchor="middle" font-size="13" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">sublimity</text>';
+  g+='<text x="'+B[0]+'" y="'+(B[1]+22)+'" text-anchor="middle" font-size="13" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">vitality</text>';
+  g+='<text x="'+C[0]+'" y="'+(C[1]+22)+'" text-anchor="middle" font-size="13" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">unease</text>';
+  return '<svg class="journey-svg" style="max-width:360px;margin:0 auto" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="GEMS triangle">'+g+'</svg>';
+}
+function shapeProse(p){
+  const sp=pct("spreadVal",p.spreadVal)??50;
+  const spread= sp<33 ? "The cloud is tight: a narrow taste pocket, mined deep rather than wide."
+    : sp<67 ? "The cloud has typical width: a clear center with real range around it."
+    : "The cloud is wide: your favorites cover more feeling-territory than most lists we read.";
+  let modes;
+  if(p.multimodal&&p.clusterInfo){
+    const a=p.clusterInfo.a,b=p.clusterInfo.b;
+    const ex=c=>c.songs.slice(0,2).join(", ");
+    modes="And it is not one cloud but two: a "+a.label+" pocket ("+a.n+" songs, e.g. "+ex(a)+") and a "+b.label+" pocket ("+b.n+", e.g. "+ex(b)+"). Your taste runs on two engines, and the rest of this report describes their average; both homes are real.";
+  } else {
+    modes="The songs form one coherent cluster: a single home base rather than split allegiances.";
+  }
+  return spread+" "+modes;
+}
+
 function renderReport(p){
   const r=$("#report");
   const cool="var(--cool)",violet="var(--violet)",warm="var(--warm)";
@@ -1981,9 +2288,17 @@ function renderReport(p){
 
   r.innerHTML=`
     <h2 class="oneliner">${oneLiner(p)}</h2>
-    <p class="summary">Across ${p.n} songs and ${p.pgGenres.length} genres${p.eraAvail&&p.decades>=2?`, ~${p.decades} decades deep`:""}, one shape keeps surfacing: you chase ${p.de>.78?"depth":"feel"}, your payoff lands as ${p.subP>=p.vitP?"awe":"motion"}, and you ${p.uneP<.35?"keep the dark at arm's length":"let the dark stay in the room"}. What follows is a mirror, not a measurement. Real research, honest about its modest effect sizes.</p>
+    <p class="summary">${summaryLine(p)} What follows is a mirror, not a measurement. Real research, honest about its modest effect sizes.</p>
 
     <p class="portrait">${portrait(p)}</p>
+
+    <div class="card">
+      <h3>Trait fingerprint &middot; all 14 dimensions</h3>
+      <p class="viz-help">Your whole reading in one silhouette. Each spoke is one dimension this report measures, plotted as a percentile against other listeners; the further a point sits from the center, the higher you run. Every dimension is spelled out in the strip below.</p>
+      ${radarSVG(fingerprintDims(p),380,505)}
+      <p class="viz-help" style="margin-top:16px">The same 14 readings as positions. The shaded band is the middle half of listeners; a dot outside it is a genuine signature.</p>
+      ${dotStripSVG(fingerprintDims(p))}
+    </div>
 
     <div class="card">
       <h3>AVD coordinates</h3>
@@ -2012,6 +2327,74 @@ function renderReport(p){
     </div>
 
     <div class="card">
+      <h3>Personality estimates · Big Five</h3>
+      ${radarSVG([{label:"Openness",P:pct("O",p.O)??50},{label:"Agreeableness",P:pct("Ag",p.Ag)??50},{label:"Conscientiousness",P:pct("Co",p.Co)??50},{label:"Extraversion",P:pct("Ex",p.Ex)??50},{label:"Neuroticism",P:pct("Ne",p.Ne)??50}],560,620,140)}
+      <div style="margin-top:7px"></div>
+      ${traitRow("Openness",p.O,(salience(p)[0]&&salience(p)[0].k==="O"?"The cleanest line in your whole list. It points to ":"It points to ")+traitNote("O",p.O)+".")}
+      ${traitRow("Extraversion",p.Ex,"On people: "+traitNote("Ex",p.Ex)+".")}
+      ${traitRow("Agreeableness",p.Ag,"On warmth: "+traitNote("Ag",p.Ag)+".")}
+      ${traitRow("Conscientiousness",p.Co,"A fainter signal. It reads as "+traitNote("Co",p.Co)+".")}
+      ${traitRow("Neuroticism",p.Ne,"Tread lightly here. It looks like "+traitNote("Ne",p.Ne)+".")}
+    </div>
+
+    <div class="card">
+      <h3>Listening style</h3>
+      <p class="viz-help">A spectrum from the Empathizing/Systemizing theory of cognition. <b>Empathizers</b> are moved by warmth and human texture, a voice, a string, an ache. <b>Systemizers</b> are gripped by structure, how a track is built, how it locks together, where it's going. The dot is where your list sits between the two.</p>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:4px">Empathizer ←→ Systemizer</p>
+      <div class="lean"><div class="mid"></div><div class="dot" data-x="${leanPct}"></div></div>
+      <div class="lean-ends"><span>warm · emotional timbre</span><span>structural · engineered</span></div>
+      <p style="margin-top:14px">${p.lean<-.2?"You lean empathizer: mellow, emotionally-loaded textures and strings are what reach in and grab you."
+        :p.lean>.2?"You lean systemizer, it's structural intensity, density, and engineered form that pull you forward."
+        :"You're a hybrid: empathy in the sound, system in the structure, warm-blooded timbres riding on architected forms."}</p>
+      <div style="margin-top:18px">${traitRow("Absorption / chills propensity",p.Abs,traitNote("Abs",p.Abs)+".")}</div>
+    </div>
+
+    <div class="card">
+      <h3>The shape of your taste</h3>
+      <p class="viz-help">Every song you picked is one dot, placed by how energetic it is (left to right) and how deep it goes (bottom to top), and colored by the emotion it mostly delivers. Songs that land near each other feel similar; the corner labels name each territory. Dashed rings mark distinct pockets when your list has more than one home.</p>
+      ${cloudSVG(p)}
+      <p class="subh">How wide it runs, and how many homes it has</p>
+      <p style="margin-top:6px">${shapeProse(p)}</p>
+      <p class="subh">Your emotional center of gravity</p>
+      <p class="viz-help" style="margin-top:0">The triangle's three corners are the GEMS emotion families: sublimity (awe, tenderness, transcendence), vitality (joy, power, motion), and unease (tension, sadness). The dot is your list's balance point; the closer it sits to a corner, the more your favorites live there.</p>
+      ${ternarySVG(p)}
+    </div>
+
+    <div class="card">
+      <h3>Sensation seeking · SSS</h3>
+      ${traitRow("Experience seeking, novelty, variety, range",p.sssExperience,sssNote("sssExperience",p.sssExperience))}
+      ${traitRow("Thrill / disinhibition, intensity, risk",p.sssThrill,sssNote("sssThrill",p.sssThrill))}
+      <p style="margin-top:4px;color:var(--muted);font-size:13.5px">${
+        p.sssExperience-p.sssThrill>14 ? "High on experience, low on thrill: you're chasing novelty and richness, not raw volume. This is the read underneath \u201Ccontrolled arousal, not brute force.\u201D"
+        : p.sssThrill-p.sssExperience>14 ? "You tilt toward intensity: loudness, edge, and risk over mere novelty."
+        : "Novelty-seeking and intensity-seeking run neck and neck: you want experiences both wide and high-voltage."
+      }</p>
+    </div>
+
+    <div class="card">
+      <h3>What music does for you · BMRQ</h3>
+      ${traitRow("Musical seeking",p.bmrq.seeking,bmrqNote("seeking",p.bmrq.seeking))}
+      ${traitRow("Emotion evocation",p.bmrq.emotion,bmrqNote("emotion",p.bmrq.emotion))}
+      ${traitRow("Mood regulation",p.bmrq.mood,bmrqNote("mood",p.bmrq.mood))}
+      ${traitRow("Sensory-motor, groove",p.bmrq.sensory,bmrqNote("sensory",p.bmrq.sensory))}
+      ${traitRow("Social reward",p.bmrq.social,bmrqNote("social",p.bmrq.social))}
+    </div>
+
+    <div class="card">
+      <h3>Cross-check · MUSIC model & orientation</h3>
+      ${traitRow("Mellow",p.music.mellow,musicNote("mellow",p.music.mellow))}
+      ${traitRow("Unpretentious",p.music.unpretentious,musicNote("unpretentious",p.music.unpretentious))}
+      ${traitRow("Sophisticated",p.music.sophisticated,musicNote("sophisticated",p.music.sophisticated))}
+      ${traitRow("Intense",p.music.intense,musicNote("intense",p.music.intense))}
+      ${traitRow("Contemporary",p.music.contemporary,musicNote("contemporary",p.music.contemporary))}
+      <p style="font-size:14px;color:var(--muted);margin:18px 0 4px">Hedonic ←→ Eudaimonic</p>
+      <p class="viz-help" style="margin-top:0">Two reasons people reach for music. <b>Hedonic</b> is for pleasure and lift in the moment, to feel good now. <b>Eudaimonic</b> is for meaning, depth, and contemplation, to feel something <i>true</i>. The dot marks which way you tilt.</p>
+      <div class="lean"><div class="mid"></div><div class="dot" data-x="${Math.round((1-(p.heLean+1)/2)*100)}"></div></div>
+      <div class="lean-ends"><span>pleasure · uplift</span><span>meaning · contemplation</span></div>
+      <p style="margin-top:12px">${p.heLean<-.2?"You lean eudaimonic: music as meaning and contemplation, not just pleasure. It's exactly why beautiful sadness works on you.":p.heLean>.2?"You lean hedonic, music for pleasure, charge, and right-now uplift.":"You hold hedonic and eudaimonic in balance, pleasure and meaning in roughly equal measure."}</p>
+    </div>
+
+    <div class="card">
       <h3>The journey your songs take you on</h3>
       <p class="viz-help">This curve is the emotional shape your favorites tend to share, left to right, how a typical one carries you from first contact to its peak and back down. A steep climb means you like to be <i>built</i> toward a payoff; a gentle one means you prefer a mood held steady. The bright point is the arrival.</p>
       <div class="journeywrap">
@@ -2034,69 +2417,24 @@ function renderReport(p){
     </div>
 
     <div class="card">
-      <h3>Personality estimates · Big Five</h3>
-      ${traitRow("Openness",p.O,"The cleanest line in your whole list. It points to "+traitNote("O",p.O)+".")}
-      ${traitRow("Extraversion",p.Ex,"On people: "+traitNote("Ex",p.Ex)+".")}
-      ${traitRow("Agreeableness",p.Ag,"On warmth: "+traitNote("Ag",p.Ag)+".")}
-      ${traitRow("Conscientiousness",p.Co,"A fainter signal. It reads as "+traitNote("Co",p.Co)+".")}
-      ${traitRow("Neuroticism",p.Ne,"Tread lightly here. It looks like "+traitNote("Ne",p.Ne)+".")}
-    </div>
-
-    <div class="card">
-      <h3>Listening style</h3>
-      <p class="viz-help">A spectrum from the Empathizing/Systemizing theory of cognition. <b>Empathizers</b> are moved by warmth and human texture, a voice, a string, an ache. <b>Systemizers</b> are gripped by structure, how a track is built, how it locks together, where it's going. The dot is where your list sits between the two.</p>
-      <p style="font-size:14px;color:var(--muted);margin-bottom:4px">Empathizer ←→ Systemizer</p>
-      <div class="lean"><div class="mid"></div><div class="dot" data-x="${leanPct}"></div></div>
-      <div class="lean-ends"><span>warm · emotional timbre</span><span>structural · engineered</span></div>
-      <p style="margin-top:14px">${p.lean<-.2?"You lean empathizer: mellow, emotionally-loaded textures and strings are what reach in and grab you."
-        :p.lean>.2?"You lean systemizer, it's structural intensity, density, and engineered form that pull you forward."
-        :"You're a hybrid: empathy in the sound, system in the structure, warm-blooded timbres riding on architected forms."}</p>
-      <div style="margin-top:18px">${traitRow("Absorption / chills propensity",p.Abs,traitNote("Abs",p.Abs)+".")}</div>
-    </div>
-
-    <div class="card">
-      <h3>Sensation seeking · SSS</h3>
-      ${traitRow("Experience seeking, novelty, variety, range",p.sssExperience,"Hunger for the new and the wide, clocked from how far you range across genre, era, and depth.")}
-      ${traitRow("Thrill / disinhibition, intensity, risk",p.sssThrill,"Hunger for the loud and the edged, clocked from arousal, distortion, and how much unease you\u2019ll sit in.")}
-      <p style="margin-top:4px;color:var(--muted);font-size:13.5px">${
-        p.sssExperience-p.sssThrill>14 ? "High on experience, low on thrill: you're chasing novelty and richness, not raw volume. This is the read underneath \u201Ccontrolled arousal, not brute force.\u201D"
-        : p.sssThrill-p.sssExperience>14 ? "You tilt toward intensity: loudness, edge, and risk over mere novelty."
-        : "Novelty-seeking and intensity-seeking run neck and neck: you want experiences both wide and high-voltage."
-      }</p>
-    </div>
-
-    <div class="card">
-      <h3>What music does for you · BMRQ</h3>
-      ${traitRow("Musical seeking",p.bmrq.seeking,"The itch to keep digging, new sounds, new corners, never quite finished.")}
-      ${traitRow("Emotion evocation",p.bmrq.emotion,"Music as a trapdoor straight to the feeling.")}
-      ${traitRow("Mood regulation",p.bmrq.mood,"The dial you reach for to lift, steady, or rescue a mood.")}
-      ${traitRow("Sensory-motor, groove",p.bmrq.sensory,"The part that can\u2019t sit still, rhythm landing in the body.")}
-      ${traitRow("Social reward",p.bmrq.social,"Songs as connective tissue, the lift of feeling it with other people.")}
-    </div>
-
-    <div class="card">
-      <h3>Cross-check · MUSIC model & orientation</h3>
-      ${traitRow("Mellow",p.music.mellow,"soft-focus, low-flame, easy on the system")}
-      ${traitRow("Unpretentious",p.music.unpretentious,"sincere, plainspoken, no costume")}
-      ${traitRow("Sophisticated",p.music.sophisticated,"complex, crafted, built to reward attention")}
-      ${traitRow("Intense",p.music.intense,"loud, edged, made to hit")}
-      ${traitRow("Contemporary",p.music.contemporary,"current, rhythmic, made for now")}
-      <p style="font-size:14px;color:var(--muted);margin:18px 0 4px">Hedonic ←→ Eudaimonic</p>
-      <p class="viz-help" style="margin-top:0">Two reasons people reach for music. <b>Hedonic</b> is for pleasure and lift in the moment, to feel good now. <b>Eudaimonic</b> is for meaning, depth, and contemplation, to feel something <i>true</i>. The dot marks which way you tilt.</p>
-      <div class="lean"><div class="mid"></div><div class="dot" data-x="${Math.round((1-(p.heLean+1)/2)*100)}"></div></div>
-      <div class="lean-ends"><span>pleasure · uplift</span><span>meaning · contemplation</span></div>
-      <p style="margin-top:12px">${p.heLean<-.2?"You lean eudaimonic: music as meaning and contemplation, not just pleasure. It's exactly why beautiful sadness works on you.":p.heLean>.2?"You lean hedonic, music for pleasure, charge, and right-now uplift.":"You hold hedonic and eudaimonic in balance, pleasure and meaning in roughly equal measure."}</p>
-    </div>
-
-    <div class="card">
       <h3>The most exact sentence I can justify</h3>
-      <p style="font-family:'Instrument Serif',serif;font-size:21px;line-height:1.35">
-        You likely score ${p.O>66?"high":"above average"} in Openness${p.O>66?", especially aesthetic sensitivity and artistic interest":""};
-        ${p.Abs>60?"you have a strong capacity for absorption and chills; ":""}your listening style is
-        ${p.lean<-.2?"empathizer-leaning":p.lean>.2?"systemizer-leaning":"a hybrid of empathic timbre and structural form"};
-        your social-energy signal is ${p.Ex>62?"outward and uplift-seeking":p.Ex<46?"selectively inward":"ambiverted and state-dependent"};
-        and you prefer ${p.uneP<.35?"beauty, coherence, and uplift over antagonism or brute abrasion":"intensity and tension you can feel honestly"}.
-      </p>
+      <p style="font-family:'Instrument Serif',serif;font-size:21px;line-height:1.35">${exactSentence(p)}</p>
+    </div>
+
+    <div class="card">
+      <h3>Share &amp; compare</h3>
+      <p class="viz-help">Your results as a link. Anyone who opens it sees this exact reading; the short code at the end is your list.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <input id="shareUrl" readonly value="${shareUrl(p)}" style="flex:1;min-width:220px;background:var(--ground);border:1px solid var(--line);border-radius:10px;color:var(--muted);padding:10px 12px;font-family:'Space Mono',monospace;font-size:12px" onclick="this.select()">
+        <button class="go" style="padding:10px 18px" onclick="navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('shareUrl').value).then(()=>{this.textContent='Copied';setTimeout(()=>this.textContent='Copy link',1400)})">Copy link</button>
+      </div>
+      <p class="subh">Compare with someone</p>
+      <p class="viz-help">Paste their link or code below to read the two lists against each other: overall compatibility, where you match, and where you differ.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <input id="cmpCode" placeholder="Paste their link or code" style="flex:1;min-width:220px;background:var(--ground);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:10px 12px;font-family:inherit;font-size:13px">
+        <button class="go" style="padding:10px 18px" onclick="runCompare()">Compare</button>
+      </div>
+      <div id="cmpOut" style="margin-top:14px"></div>
     </div>
 
     <div class="foot">
@@ -2110,8 +2448,64 @@ function renderReport(p){
     r.querySelectorAll(".dot").forEach(d=>d.style.left=d.dataset.x+"%");
   }));
 }
-/* restore saved list + reading now that every helper above is initialized */
-loadState();
+/* ---- Share & compare: list <-> compact code <-> URL hash. Codes are DB indices,
+   2 base64url chars each; stable because new songs are only ever appended. ---- */
+const B64U="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+function encodeList(ids){ return ids.map(i=>B64U[(i>>6)&63]+B64U[i&63]).join(""); }
+function decodeList(code){
+  code=(code||"").trim();
+  const m=code.match(/#?c=([A-Za-z0-9\-_]+)/); if(m) code=m[1];
+  code=code.replace(/[^A-Za-z0-9\-_]/g,"");
+  if(!code||code.length%2) return null;
+  const ids=[];
+  for(let i=0;i<code.length;i+=2){
+    const a=B64U.indexOf(code[i]), b=B64U.indexOf(code[i+1]);
+    if(a<0||b<0) return null;
+    const id=(a<<6)|b; if(id>=DB.length) return null;
+    ids.push(id);
+  }
+  return ids.length>=4?ids:null;
+}
+function shareUrl(){ return location.origin+location.pathname+"#c="+encodeList(chosen); }
+function runCompare(){
+  const out=document.getElementById("cmpOut");
+  const ids=decodeList(document.getElementById("cmpCode").value);
+  if(!ids){ out.innerHTML='<p class="viz-help">That code did not read as a valid list. It should look like the tail end of a results link (at least 4 songs).</p>'; return; }
+  const mine=analyze(chosen.map(i=>DB[i])), theirs=analyze(ids.map(i=>DB[i]));
+  out.innerHTML=compareHTML(mine,theirs,ids);
+}
+function compareHTML(a,b,theirIds){
+  const dims=[["O","Openness"],["Ag","Agreeableness"],["Co","Conscientiousness"],["Ex","Extraversion"],["Ne","Neuroticism"],
+    ["E","empathizer pull"],["S","systemizer pull"],["ar","energy preference"],["va","brightness preference"],["de","depth appetite"],
+    ["subP","sublimity share"],["vitP","vitality share"],["uneP","unease share"]];
+  const rows=dims.map(([k,label])=>({label,pa:pct(k,a[k])??50,pb:pct(k,b[k])??50}))
+    .map(r=>({...r,gap:Math.abs(r.pa-r.pb)}));
+  const meanGap=rows.reduce((t,r)=>t+r.gap,0)/rows.length;
+  const shared=chosen.filter(i=>theirIds.includes(i)).map(i=>DB[i].t);
+  const genreOverlap=b.pgGenres.filter(g=>a.pgGenres.includes(g)).length/Math.max(1,Math.min(a.pgGenres.length,b.pgGenres.length));
+  let score=Math.round(Math.max(4,Math.min(98, 100-meanGap*1.15 + genreOverlap*6 + Math.min(shared.length,3)*2)));
+  const close=[...rows].sort((x,y)=>x.gap-y.gap).slice(0,3);
+  const far=[...rows].sort((x,y)=>y.gap-x.gap).slice(0,2);
+  const laneMatch=(a.subP>=a.vitP)===(b.subP>=b.vitP);
+  const verdict= score>=80?"Strong alignment: you are reading music with very similar instruments."
+    : score>=62?"Solid overlap with real differences, enough common ground to share a playlist, enough contrast to trade discoveries."
+    : score>=45?"Different defaults. Not incompatible, but you go to music for different payoffs"+(laneMatch?".":": one of you chases lift, the other motion.")
+    : "Musical opposites. If this is a date, plan dinner conversation around something other than the aux cord.";
+  return '<p style="font-family:\'Instrument Serif\',serif;font-size:30px;margin:6px 0 2px">'+score+'% compatible</p>'
+    +'<p style="margin:4px 0 10px">'+verdict+'</p>'
+    +'<p class="viz-help" style="margin:0 0 4px"><b style="color:var(--text)">Where you match:</b> '+close.map(r=>r.label).join(", ")+'.</p>'
+    +'<p class="viz-help" style="margin:0 0 4px"><b style="color:var(--text)">Where you differ most:</b> '+far.map(r=>r.label+" ("+Math.round(r.gap)+" points apart)").join("; ")+'.</p>'
+    +(shared.length?'<p class="viz-help" style="margin:0">Songs you both picked: '+shared.slice(0,4).join(", ")+'.</p>':"")
+    +'<p class="viz-help" style="margin:8px 0 0;opacity:.75">Playful, not predictive: this compares listening profiles, and taste is only one channel of a relationship.</p>';
+}
+/* open a shared link: rebuild that list and show its reading */
+(function(){
+  const ids=decodeList(location.hash);
+  if(ids){ chosen.length=0; ids.forEach(i=>chosen.push(i)); renderChips();
+    renderReport(analyze(chosen.map(i=>DB[i])));
+    return; }
+  loadState();
+})();
 </script>
 </body>
 </html>
