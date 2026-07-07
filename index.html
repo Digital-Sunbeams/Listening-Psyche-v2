@@ -117,6 +117,8 @@
   .portrait{font-family:"Instrument Serif",serif;font-size:clamp(19px,3.3vw,23px);line-height:1.5;color:var(--text);margin:0 0 32px;max-width:62ch}
   .portrait .accent{font-style:italic;color:var(--violet)}
   .viz-help{font-size:13px;color:var(--muted);line-height:1.55;margin:-6px 0 16px}
+  #cmpOut p{font-size:16.5px}
+  #cmpOut p.viz-help{font-size:14px}
   .card p.subh{font-family:"Instrument Serif",serif;font-weight:400;font-size:21px;line-height:1.25;color:var(--text);letter-spacing:.01em;margin:26px 0 6px}
   .viz-cap{font-size:13px;color:var(--muted);line-height:1.55;margin:12px 0 0}
   .viz-cap b{color:var(--text);font-weight:500}
@@ -2173,16 +2175,16 @@ function fingerprintDims(p){
     ["subP","Su","Sublimity share"],["vitP","Vi","Vitality share"],["uneP","Un","Unease share"]].map(([k,label,name])=>({k,label,name,P:pct(k,p[k])??50}));
 }
 function dotStripSVG(dims){
-  const W=640,rowH=32,padT=28,L=248,R=620,H=padT+dims.length*rowH+8;
+  const W=640,rowH=38,padT=32,L=248,R=620,H=padT+dims.length*rowH+8;
   const X=P=>L+(R-L)*P/100;
-  let g='<text x="'+X(50)+'" y="14" text-anchor="middle" font-size="13" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
+  let g='<text x="'+X(50)+'" y="16" text-anchor="middle" font-size="16" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
   dims.forEach((d,i)=>{const y=padT+i*rowH+rowH/2;
-    g+='<text x="10" y="'+(y+4)+'" text-anchor="start" font-size="15" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
-    g+='<text x="48" y="'+(y+4)+'" text-anchor="start" font-size="14" fill="var(--muted)">'+(d.name||"")+'</text>';
+    g+='<text x="10" y="'+(y+4)+'" text-anchor="start" font-size="18" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
+    g+='<text x="48" y="'+(y+4)+'" text-anchor="start" font-size="17" fill="var(--muted)">'+(d.name||"")+'</text>';
     g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
     g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
     g+='<line x1="'+X(50)+'" y1="'+(y-6)+'" x2="'+X(50)+'" y2="'+(y+6)+'" stroke="#554B92" stroke-width="1"/>';
-    g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="5" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
+    g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="7" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
   return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="percentile strip">'+g+'</svg>';
 }
 function cloudSVG(p){
@@ -2478,7 +2480,7 @@ function compareHTML(a,b,theirIds){
   const dims=[["O","Openness"],["Ag","Agreeableness"],["Co","Conscientiousness"],["Ex","Extraversion"],["Ne","Neuroticism"],
     ["E","empathizer pull"],["S","systemizer pull"],["ar","energy preference"],["va","brightness preference"],["de","depth appetite"],
     ["subP","sublimity share"],["vitP","vitality share"],["uneP","unease share"]];
-  const rows=dims.map(([k,label])=>({label,pa:pct(k,a[k])??50,pb:pct(k,b[k])??50}))
+  const rows=dims.map(([k,label])=>({k,label,pa:pct(k,a[k])??50,pb:pct(k,b[k])??50}))
     .map(r=>({...r,gap:Math.abs(r.pa-r.pb)}));
   const meanGap=rows.reduce((t,r)=>t+r.gap,0)/rows.length;
   const shared=chosen.filter(i=>theirIds.includes(i)).map(i=>DB[i].t);
@@ -2486,18 +2488,62 @@ function compareHTML(a,b,theirIds){
   let score=Math.round(Math.max(4,Math.min(98, 100-meanGap*1.15 + genreOverlap*6 + Math.min(shared.length,3)*2)));
   const close=[...rows].sort((x,y)=>x.gap-y.gap).slice(0,3);
   const far=[...rows].sort((x,y)=>y.gap-x.gap).slice(0,2);
-  const laneMatch=(a.subP>=a.vitP)===(b.subP>=b.vitP);
+  const laneA=a.subP>=a.vitP, laneB=b.subP>=b.vitP;
   const verdict= score>=80?"Strong alignment: you are reading music with very similar instruments."
     : score>=62?"Solid overlap with real differences, enough common ground to share a playlist, enough contrast to trade discoveries."
-    : score>=45?"Different defaults. Not incompatible, but you go to music for different payoffs"+(laneMatch?".":": one of you chases lift, the other motion.")
+    : score>=45?"Different defaults. Not incompatible, but you go to music for different payoffs"+(laneA===laneB?".":": one of you chases lift, the other motion.")
     : "Musical opposites. If this is a date, plan dinner conversation around something other than the aux cord.";
-  return '<p style="font-family:\'Instrument Serif\',serif;font-size:30px;margin:6px 0 2px">'+score+'% compatible</p>'
-    +'<p style="margin:4px 0 10px">'+verdict+'</p>'
+
+  // Personality read: Big Five closest + widest, phrased as people rather than axes
+  const five=rows.slice(0,5);
+  const nearT=[...five].sort((x,y)=>x.gap-y.gap)[0];
+  const farT=[...five].sort((x,y)=>y.gap-x.gap)[0];
+  const sameLine={
+    Openness: (nearT.pa>=60?"you both run curious: the new and the complex is shared currency":nearT.pa<=40?"you both trust the proven over the novel":"you are both moderates about novelty"),
+    Extraversion:(nearT.pa>=60?"you both treat music as social fuel":nearT.pa<=40?"you both guard listening as private time":"you both flex between shared and solitary listening"),
+    Agreeableness:(nearT.pa>=60?"you both want warmth and sincerity from a song":nearT.pa<=40?"you both respect edge more than comfort":"you both balance warmth against edge"),
+    Conscientiousness:(nearT.pa>=60?"you both like music with architecture":nearT.pa<=40?"you both prefer drift to structure":"you both sit between order and drift"),
+    Neuroticism:(nearT.pa>=60?"you both go to meet the dark rather than avoid it":nearT.pa<=40?"you both keep the dark at a distance":"you both let tension in when it resolves")
+  };
+  const diffLine={
+    Openness:"one of you chases the new and complex while the other trusts the familiar",
+    Extraversion:"one of you listens to be with people, the other to be alone",
+    Agreeableness:"one of you wants warmth from a song, the other wants edge",
+    Conscientiousness:"one of you wants architecture, the other wants drift",
+    Neuroticism:"one of you goes to meet the dark, the other keeps it resolved"
+  };
+  const persona="Closest trait: "+nearT.label+", "+sameLine[nearT.label]+". Widest trait: "+farT.label+" ("+Math.round(farT.gap)+" points apart), "+diffLine[farT.label]+".";
+
+  // How you would listen together: lane + energy/depth dynamic
+  const lane= laneA&&laneB ? "You are both altitude listeners: the shared payoff is lift and scale, so build-heavy, cinematic sessions land for both of you."
+    : (!laneA&&!laneB) ? "You are both motion listeners: the shared payoff is the body locking in, so a shared queue should keep the pulse up."
+    : "One of you listens for lift, the other for motion. That is a trade, not a clash: one curates the come-up, the other the landing.";
+  const arGap=(pct("ar",a.ar)??50)-(pct("ar",b.ar)??50);
+  const deGap=(pct("de",a.de)??50)-(pct("de",b.de)??50);
+  const dyn=[];
+  if(Math.abs(arGap)>=30) dyn.push((arGap>0?"You run":"They run")+" noticeably hotter in energy, so whoever controls the queue sets the room temperature");
+  if(Math.abs(deGap)>=30) dyn.push((deGap>0?"you":"they")+" reach further down for depth, which means the deep cuts need introducing rather than assuming");
+  const together=lane+(dyn.length?" "+dyn.join(", and ")+".":"");
+
+  // What you would trade: genres each brings the other
+  const aOnly=a.pgGenres.filter(g=>!b.pgGenres.includes(g)).slice(0,2);
+  const bOnly=b.pgGenres.filter(g=>!a.pgGenres.includes(g)).slice(0,2);
+  const trade= (aOnly.length||bOnly.length)
+    ? "In an exchange, "+(aOnly.length?"you would hand them "+aOnly.join(" and "):"they hold no genre you lack")+(bOnly.length?"; they would hand you "+bOnly.join(" and ")+".":".")
+    : "You shop the same genre aisles, so the trade would be songs, not territories.";
+
+  return '<p style="font-family:\'Instrument Serif\',serif;font-size:31px;margin:6px 0 2px">'+score+'% compatible</p>'
+    +'<p style="margin:4px 0 12px">'+verdict+'</p>'
+    +'<p class="viz-help" style="margin:0 0 4px"><b style="color:var(--text)">Personality:</b> '+persona+'</p>'
+    +'<p class="viz-help" style="margin:0 0 4px"><b style="color:var(--text)">Listening together:</b> '+together+'</p>'
+    +'<p class="viz-help" style="margin:0 0 10px"><b style="color:var(--text)">What you would trade:</b> '+trade+'</p>'
     +'<p class="viz-help" style="margin:0 0 4px"><b style="color:var(--text)">Where you match:</b> '+close.map(r=>r.label).join(", ")+'.</p>'
     +'<p class="viz-help" style="margin:0 0 4px"><b style="color:var(--text)">Where you differ most:</b> '+far.map(r=>r.label+" ("+Math.round(r.gap)+" points apart)").join("; ")+'.</p>'
     +(shared.length?'<p class="viz-help" style="margin:0">Songs you both picked: '+shared.slice(0,4).join(", ")+'.</p>':"")
     +'<p class="viz-help" style="margin:8px 0 0;opacity:.75">Playful, not predictive: this compares listening profiles, and taste is only one channel of a relationship.</p>';
 }
+
+
 /* open a shared link: rebuild that list and show its reading */
 (function(){
   const ids=decodeList(location.hash);
