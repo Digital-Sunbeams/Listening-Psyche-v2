@@ -2185,7 +2185,7 @@ function bigFiveRadar(p){
   const names=MOB?["O","A","C","E","N"]:["Openness","Agreeableness","Conscientiousness","Extraversion","Neuroticism"];
   const keys=["O","Ag","Co","Ex","Ne"];
   const axes=keys.map((k,i)=>({label:names[i],P:pct(k,p[k])??50}));
-  return MOB ? radarSVG(axes,340,620,62,null,true,21) : radarSVG(axes,560,620,140,null,true,17.5);
+  return MOB ? radarSVG(axes,340,620,58,null,true,17) : radarSVG(axes,560,620,140,null,true,17.5);
 }
 function fingerprintDims(p){
   return [["O","O","Openness"],["Ag","A","Agreeableness"],["Co","C","Conscientiousness"],["Ex","E","Extraversion"],["Ne","N","Neuroticism"],
@@ -2196,16 +2196,16 @@ function fingerprintDims(p){
 function dotStripSVG(dims){
   const MOB=isMobileView();
   if(MOB){
-    const W=330,rowH=68,padT=38,L=14,R=314,H=padT+dims.length*rowH+6;
+    const W=330,rowH=54,padT=34,L=14,R=314,H=padT+dims.length*rowH+6;
     const X=P=>L+(R-L)*P/100;
-    let g='<text x="'+X(50)+'" y="19" text-anchor="middle" font-size="16" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
-    dims.forEach((d,i)=>{const top=padT+i*rowH, y=top+46;
-      g+='<text x="10" y="'+(top+19)+'" text-anchor="start" font-size="21" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
-      g+='<text x="'+(d.label.length>1?50:37)+'" y="'+(top+19)+'" text-anchor="start" font-size="20" fill="var(--muted)">'+(d.name||"")+'</text>';
+    let g='<text x="'+X(50)+'" y="17" text-anchor="middle" font-size="14" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
+    dims.forEach((d,i)=>{const top=padT+i*rowH, y=top+37;
+      g+='<text x="10" y="'+(top+16)+'" text-anchor="start" font-size="17" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
+      g+='<text x="'+(d.label.length>1?42:30)+'" y="'+(top+16)+'" text-anchor="start" font-size="16.5" fill="var(--muted)">'+(d.name||"")+'</text>';
       g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
       g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
       g+='<line x1="'+X(50)+'" y1="'+(y-8)+'" x2="'+X(50)+'" y2="'+(y+8)+'" stroke="#554B92" stroke-width="1"/>';
-      g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="9.5" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
+      g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="8" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
     return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="percentile strip">'+g+'</svg>';
   }
   const W=660,rowH=44,padT=36,L=268,R=640,H=padT+dims.length*rowH+10;
@@ -2697,13 +2697,13 @@ function unlockMatch(btn){
 function pairedStripSVG(dims){
   const MOB=isMobileView();
   if(MOB){
-    const W=330,rowH=66,padT=44,L=14,R=314,H=padT+dims.length*rowH+6;
+    const W=330,rowH=52,padT=40,L=14,R=314,H=padT+dims.length*rowH+6;
     const X=P=>L+(R-L)*P/100;
     let g='<g font-size="15" font-family="Inter,sans-serif" fill="var(--muted)">'
       +'<circle cx="'+(W/2-72)+'" cy="14" r="5" fill="var(--violet)"/><text x="'+(W/2-61)+'" y="19">you</text>'
       +'<circle cx="'+(W/2+16)+'" cy="14" r="5" fill="none" stroke="var(--warm)" stroke-width="2.5"/><text x="'+(W/2+27)+'" y="19">them</text></g>';
-    dims.forEach((d,i)=>{const top=padT+i*rowH, y=top+42;
-      g+='<text x="10" y="'+(top+17)+'" text-anchor="start" font-size="20" fill="var(--muted)">'+d.label+'</text>';
+    dims.forEach((d,i)=>{const top=padT+i*rowH, y=top+35;
+      g+='<text x="10" y="'+(top+15)+'" text-anchor="start" font-size="16.5" fill="var(--muted)">'+d.label+'</text>';
       g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
       g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
       const xa=X(d.pa),xb=X(d.pb);
