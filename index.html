@@ -2181,7 +2181,7 @@ function radarSVG(axes,size,maxW,labelPad,color,showVals,labelSize){
     +'<defs><linearGradient id="radGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--cool)"/><stop offset=".55" stop-color="var(--violet)"/><stop offset="1" stop-color="var(--warm)"/></linearGradient></defs>'+g+'</svg>';
 }
 function bigFiveRadar(p){
-  const MOB=(typeof window!=="undefined"&&window.innerWidth<640);
+  const MOB=isMobileView();
   const names=MOB?["O","A","C","E","N"]:["Openness","Agreeableness","Conscientiousness","Extraversion","Neuroticism"];
   const keys=["O","Ag","Co","Ex","Ne"];
   const axes=keys.map((k,i)=>({label:names[i],P:pct(k,p[k])??50}));
@@ -2194,7 +2194,7 @@ function fingerprintDims(p){
     ["subP","Su","Sublimity share"],["vitP","Vi","Vitality share"],["uneP","Un","Unease share"]].map(([k,label,name])=>({k,label,name,P:pct(k,p[k])??50}));
 }
 function dotStripSVG(dims){
-  const MOB=(typeof window!=="undefined"&&window.innerWidth<640);
+  const MOB=isMobileView();
   if(MOB){
     const W=330,rowH=68,padT=38,L=14,R=314,H=padT+dims.length*rowH+6;
     const X=P=>L+(R-L)*P/100;
@@ -2324,7 +2324,7 @@ function renderReport(p){
     <div class="card">
       <h3>Trait fingerprint &middot; all 14 dimensions</h3>
       <p class="viz-help">Your whole reading in one silhouette. Each spoke is one dimension this report measures, plotted as a percentile against other listeners; the further a point sits from the center, the higher you run. Every dimension is spelled out in the strip below.</p>
-      ${window.innerWidth<640?radarSVG(fingerprintDims(p),330,505,50,null,false,17):radarSVG(fingerprintDims(p),380,505)}
+      ${isMobileView()?radarSVG(fingerprintDims(p),330,505,50,null,false,17):radarSVG(fingerprintDims(p),380,505)}
       <p class="viz-help" style="margin-top:16px">The same 14 readings as positions. The shaded band is the middle half of listeners; a dot outside it is a genuine signature.</p>
       ${dotStripSVG(fingerprintDims(p))}
     </div>
@@ -2521,6 +2521,14 @@ function runCompare(){
 const PAY_LINK_MATCH="";   // paste a Stripe/Gumroad payment link here to arm the paywall
 const PAY_LINK_EXTENDED=""; // future: extended compatibility report
 
+function isMobileView(){
+  try{
+    const w=Math.min(document.documentElement.clientWidth||9999, window.innerWidth||9999);
+    if(w<700) return true;
+    if(window.matchMedia && window.matchMedia("(max-width: 699px)").matches) return true;
+  }catch(e){}
+  return false;
+}
 function pctv(key,q){ const t=PCT[key]; return t? t[Math.max(0,Math.min(20,Math.round(q/5)))] : 0.5; }
 function perfectMatch(p){
   // PERSONALITY-FIRST pipeline.
@@ -2687,7 +2695,7 @@ function unlockMatch(btn){
 }
 
 function pairedStripSVG(dims){
-  const MOB=(typeof window!=="undefined"&&window.innerWidth<640);
+  const MOB=isMobileView();
   if(MOB){
     const W=330,rowH=66,padT=44,L=14,R=314,H=padT+dims.length*rowH+6;
     const X=P=>L+(R-L)*P/100;
