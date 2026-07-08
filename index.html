@@ -2324,7 +2324,7 @@ function renderReport(p){
     <div class="card">
       <h3>Trait fingerprint &middot; all 14 dimensions</h3>
       <p class="viz-help">Your whole reading in one silhouette. Each spoke is one dimension this report measures, plotted as a percentile against other listeners; the further a point sits from the center, the higher you run. Every dimension is spelled out in the strip below.</p>
-      ${radarSVG(fingerprintDims(p),380,505)}
+      ${window.innerWidth<640?radarSVG(fingerprintDims(p),330,505,50,null,false,17):radarSVG(fingerprintDims(p),380,505)}
       <p class="viz-help" style="margin-top:16px">The same 14 readings as positions. The shaded band is the middle half of listeners; a dot outside it is a genuine signature.</p>
       ${dotStripSVG(fingerprintDims(p))}
     </div>
