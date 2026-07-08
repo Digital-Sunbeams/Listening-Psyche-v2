@@ -22,7 +22,7 @@
     --panel-2:#1E1644;
     --line:#2C2350;
     --text:#E9E5F4;
-    --muted:#AAA3C2;
+    --muted:#C7C2D6;
     --cool:#7C9CFF;     /* valence / depth */
     --violet:#C7A6FF;   /* sublimity / chills */
     --warm:#FFA15C;     /* arousal / vitality */
@@ -38,18 +38,18 @@
   .wrap{max-width:880px;margin:0 auto;padding:calc(48px + env(safe-area-inset-top)) max(22px,env(safe-area-inset-right)) calc(96px + env(safe-area-inset-bottom)) max(22px,env(safe-area-inset-left))}
 
   /* ---------- header ---------- */
-  .eyebrow{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--violet);opacity:.85}
+  .eyebrow{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--violet);opacity:.85}
   h1{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(44px,9vw,76px);line-height:.98;letter-spacing:-.01em;margin:14px 0 10px}
   h1 em{font-style:italic;background:linear-gradient(100deg,var(--cool),var(--violet) 55%,var(--warm));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lede{color:var(--muted);max-width:54ch;font-size:16px}
+  .lede{color:var(--muted);max-width:54ch;font-size:17px}
 
   /* ---------- builder ---------- */
   .builder{margin-top:40px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
-  .builder h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:24px;margin:0 0 4px}
-  .builder p.sub{color:var(--muted);font-size:13px;margin:0 0 16px}
+  .builder h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:25px;margin:0 0 4px}
+  .builder p.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
   .searchrow{position:relative}
   input[type=text]{width:100%;background:var(--ground);border:1px solid var(--line);border-radius:10px;color:var(--text);
-    padding:13px 14px;font-size:15px;font-family:inherit;outline:none;transition:border-color .15s}
+    padding:13px 14px;font-size:16px;font-family:inherit;outline:none;transition:border-color .15s}
   input[type=text]:focus{border-color:var(--cool)}
   input[type=text]::placeholder{color:var(--muted)}
 
@@ -59,15 +59,15 @@
   .opt:last-child{border-bottom:none}
   .opt:hover{background:var(--panel-2)}
   .opt .meta{min-width:0}
-  .opt .t{font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .opt .a{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .opt .g{font-family:"Space Mono",monospace;font-size:10px;color:var(--violet);letter-spacing:.06em;flex:none;text-transform:uppercase;opacity:.8}
-  .nohit{padding:14px;color:var(--muted);font-size:13px}
-  .results .near-hdr{padding:10px 13px;color:var(--muted);font-size:11.5px;border-bottom:1px solid var(--line);letter-spacing:.02em;background:var(--ground)}
+  .opt .t{font-weight:500;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .opt .a{color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .opt .g{font-family:"Space Mono",monospace;font-size:11px;color:var(--violet);letter-spacing:.06em;flex:none;text-transform:uppercase;opacity:.8}
+  .nohit{padding:14px;color:var(--muted);font-size:14px}
+  .results .near-hdr{padding:10px 13px;color:var(--muted);font-size:12.5px;border-bottom:1px solid var(--line);letter-spacing:.02em;background:var(--ground)}
   .opt.near .t::before{content:"\2248 ";color:var(--cool);font-weight:600}
 
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;min-height:4px}
-  .browse-toggle{width:100%;margin-top:10px;padding:11px 14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;color:var(--text);font-family:inherit;font-size:13px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;letter-spacing:.01em}
+  .browse-toggle{width:100%;margin-top:10px;padding:11px 14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;color:var(--text);font-family:inherit;font-size:14px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;letter-spacing:.01em}
   .browse-toggle:hover{background:var(--panel-2)}
   .browse-toggle::after{content:"\25BE";color:var(--muted);transition:transform .2s}
   .browse-toggle.open::after{transform:rotate(180deg)}
@@ -75,9 +75,9 @@
   .browse-panel.open{display:block}
   .genre-sec{border-bottom:1px solid var(--line)}
   .genre-sec:last-child{border-bottom:none}
-  .genre-row{width:100%;display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:none;border:none;color:var(--text);font-family:inherit;font-size:13px;cursor:pointer;letter-spacing:.02em}
+  .genre-row{width:100%;display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:none;border:none;color:var(--text);font-family:inherit;font-size:14px;cursor:pointer;letter-spacing:.02em}
   .genre-row:hover{background:var(--panel-2)}
-  .genre-row::after{content:"\25BE";color:var(--muted);font-size:11px;transition:transform .2s}
+  .genre-row::after{content:"\25BE";color:var(--muted);font-size:12px;transition:transform .2s}
   .genre-sec.open .genre-row::after{transform:rotate(180deg)}
   .genre-sec.open .genre-row{background:var(--panel-2)}
   .genre-songs{display:none;max-height:300px;overflow-y:auto;background:var(--ground)}
@@ -86,22 +86,22 @@
   .bsong:last-child{border-bottom:none}
   .bsong:hover{background:var(--panel)}
   .bsong .meta{min-width:0}
-  .bsong .t{font-weight:500;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .bsong .a{color:var(--muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .bsong .g{font-family:"Space Mono",monospace;font-size:10px;color:var(--violet);letter-spacing:.06em;flex:none;text-transform:uppercase;opacity:.8}
+  .bsong .t{font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bsong .a{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bsong .g{font-family:"Space Mono",monospace;font-size:11px;color:var(--violet);letter-spacing:.06em;flex:none;text-transform:uppercase;opacity:.8}
   .bsong.picked{background:var(--panel-2)}
   .bsong.picked .t::after{content:" \2713";color:var(--cool)}
   .chip{display:inline-flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--line);
-    border-radius:999px;padding:7px 8px 7px 13px;font-size:13px}
+    border-radius:999px;padding:7px 8px 7px 13px;font-size:14px}
   .chip b{font-weight:600}
   .chip span{color:var(--muted)}
-  .chip button{appearance:none;border:none;background:transparent;color:var(--muted);cursor:pointer;font-size:16px;line-height:1;padding:0 2px;border-radius:50%}
+  .chip button{appearance:none;border:none;background:transparent;color:var(--muted);cursor:pointer;font-size:17px;line-height:1;padding:0 2px;border-radius:50%}
   .chip button:hover{color:var(--rose)}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}
-  .count{font-family:"Space Mono",monospace;font-size:12px;color:var(--muted)}
+  .count{font-family:"Space Mono",monospace;font-size:13px;color:var(--muted)}
   .count b{color:var(--text)}
-  .go{appearance:none;border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:15px;color:#15102b;
+  .go{appearance:none;border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:16px;color:#15102b;
     background:linear-gradient(100deg,var(--cool),var(--violet) 60%,var(--warm));padding:13px 26px;border-radius:10px;transition:transform .12s,opacity .12s}
   .go:hover{transform:translateY(-1px)}
   .go:disabled{opacity:.4;cursor:not-allowed;transform:none}
@@ -113,68 +113,68 @@
 
   .oneliner{font-family:"Instrument Serif",serif;font-size:clamp(26px,5vw,38px);line-height:1.18;letter-spacing:-.01em;margin:0 0 6px}
   .oneliner em{font-style:italic;color:var(--violet)}
-  .summary{color:var(--muted);font-size:15px;max-width:60ch;margin-bottom:22px}
+  .summary{color:var(--muted);font-size:16px;max-width:60ch;margin-bottom:22px}
   .portrait{font-family:"Instrument Serif",serif;font-size:clamp(19px,3.3vw,23px);line-height:1.5;color:var(--text);margin:0 0 32px;max-width:62ch}
   .portrait .accent{font-style:italic;color:var(--violet)}
-  .viz-help{font-size:13px;color:var(--muted);line-height:1.55;margin:-6px 0 16px}
-  #cmpOut p{font-size:16.5px}
-  #cmpOut p.viz-help{font-size:14px}
-  .card p.subh{font-family:"Instrument Serif",serif;font-weight:400;font-size:21px;line-height:1.25;color:var(--text);letter-spacing:.01em;margin:26px 0 6px}
-  .viz-cap{font-size:13px;color:var(--muted);line-height:1.55;margin:12px 0 0}
+  .viz-help{font-size:14px;color:var(--muted);line-height:1.55;margin:-6px 0 16px}
+  #cmpOut p{font-size:17.5px}
+  #cmpOut p.viz-help{font-size:15px}
+  .card p.subh{font-family:"Instrument Serif",serif;font-weight:400;font-size:22px;line-height:1.25;color:var(--text);letter-spacing:.01em;margin:26px 0 6px}
+  .viz-cap{font-size:14px;color:var(--muted);line-height:1.55;margin:12px 0 0}
   .viz-cap b{color:var(--text);font-weight:500}
   .tells{display:flex;flex-direction:column;gap:12px}
-  .tell{padding:14px 16px;background:var(--ground);border:1px solid var(--line);border-left:2px solid var(--violet);border-radius:10px;font-size:15px;line-height:1.5}
+  .tell{padding:14px 16px;background:var(--ground);border:1px solid var(--line);border-left:2px solid var(--violet);border-radius:10px;font-size:16px;line-height:1.5}
   .tell em{font-style:italic;color:var(--violet);font-weight:500;font-style:italic}
 
   .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:18px}
-  .card h3{font-family:"Space Mono",monospace;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--violet);margin:0 0 16px}
-  .card p{margin:0 0 13px;font-size:15.5px}
+  .card h3{font-family:"Space Mono",monospace;font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--violet);margin:0 0 16px}
+  .card p{margin:0 0 13px;font-size:16.5px}
   .card p:last-child{margin-bottom:0}
 
   /* coordinates */
   .coords{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   @media(max-width:560px){.coords{grid-template-columns:1fr}}
   .coord{background:var(--ground);border:1px solid var(--line);border-radius:12px;padding:16px}
-  .coord .lab{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-  .coord .val{font-family:"Space Mono",monospace;font-size:34px;line-height:1;margin:8px 0 4px}
-  .coord .desc{font-size:12px;color:var(--muted)}
+  .coord .lab{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .coord .val{font-family:"Space Mono",monospace;font-size:35px;line-height:1;margin:8px 0 4px}
+  .coord .desc{font-size:13px;color:var(--muted)}
   .coord.ar .val{color:var(--warm)} .coord.va .val{color:var(--cool)} .coord.de .val{color:var(--violet)}
 
   /* journey curve */
   .journeywrap{background:var(--ground);border:1px solid var(--line);border-radius:12px;padding:18px 6px 8px}
   .journey-svg{width:100%;height:auto;display:block}
   .arc-labels{display:flex;justify-content:space-between;padding:6px 10px 2px;gap:4px}
-  .arc-labels span{font-family:"Space Mono",monospace;font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;text-align:center;flex:1}
-  .peaktype{font-size:13px;color:var(--muted);margin-top:12px}
+  .arc-labels span{font-family:"Space Mono",monospace;font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;text-align:center;flex:1}
+  .peaktype{font-size:14px;color:var(--muted);margin-top:12px}
 
   /* trait bars */
   .trait{margin-bottom:18px}
   .trait:last-child{margin-bottom:0}
   .trait .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
-  .trait .name{font-weight:600;font-size:14.5px}
-  .trait .pct{font-family:"Space Mono",monospace;font-size:13px;color:var(--muted)}
+  .trait .name{font-weight:600;font-size:15.5px}
+  .trait .pct{font-family:"Space Mono",monospace;font-size:14px;color:var(--muted)}
   .track{height:8px;background:var(--ground);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
   .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--cool),var(--violet));width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
-  .trait .note{font-size:13px;color:var(--muted);margin-top:7px}
+  .trait .note{font-size:14px;color:var(--muted);margin-top:7px}
 
   /* E-S lean */
   .lean{position:relative;height:42px;background:var(--ground);border:1px solid var(--line);border-radius:10px;margin:6px 0 12px;overflow:hidden}
   .lean .mid{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line)}
   .lean .dot{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;transform:translate(-50%,-50%);
     background:var(--violet);box-shadow:0 0 0 6px rgba(199,166,255,.18);transition:left 1s cubic-bezier(.2,.7,.2,1)}
-  .lean-ends{display:flex;justify-content:space-between;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .lean-ends{display:flex;justify-content:space-between;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
   .timbre-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
-  .tg{font-family:"Space Mono",monospace;font-size:11px;padding:5px 9px;border-radius:7px;background:var(--panel-2);border:1px solid var(--line);color:var(--text)}
+  .tg{font-family:"Space Mono",monospace;font-size:12px;padding:5px 9px;border-radius:7px;background:var(--panel-2);border:1px solid var(--line);color:var(--text)}
   .tg b{color:var(--violet)}
 
-  .foot{margin-top:30px;color:var(--muted);font-size:12.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:18px}
+  .foot{margin-top:30px;color:var(--muted);font-size:13.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:18px}
   .restart{margin-top:18px}
   .restart button{appearance:none;background:transparent;border:1px solid var(--line);color:var(--muted);
-    border-radius:10px;padding:11px 18px;font-family:inherit;font-size:13px;cursor:pointer}
+    border-radius:10px;padding:11px 18px;font-family:inherit;font-size:14px;cursor:pointer}
   .restart button:hover{color:var(--text);border-color:var(--cool)}
 
-  .hint{font-size:12.5px;color:var(--muted);margin-top:10px}
+  .hint{font-size:13.5px;color:var(--muted);margin-top:10px}
   .hint.warn{color:var(--warm)}
 </style>
 </head>
@@ -2149,7 +2149,8 @@ function uncannyTells(p){
    ================================================================= */
 /* ---- Visual builders: radar, dot-interval strip, song cloud, GEMS triangle.
    All plot PERCENTILES vs other listeners, so shapes genuinely differ per person. ---- */
-function radarSVG(axes,size,maxW,labelPad,color,showVals){
+function radarSVG(axes,size,maxW,labelPad,color,showVals,labelSize){
+  const LS=labelSize||14.5;
   const C=color||"var(--violet)";
   const LP=labelPad||58;
   const cx=size/2, cy=size/2+6, R=size/2-LP;
@@ -2166,14 +2167,14 @@ function radarSVG(axes,size,maxW,labelPad,color,showVals){
     const poly2=axes.map((a,i)=>pt(i,R*Math.max(3,a.P2)/100).map(x=>x.toFixed(1)).join(",")).join(" ");
     g+='<polygon points="'+poly2+'" fill="var(--warm)" fill-opacity="0.10" stroke="var(--warm)" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round"/>';
     axes.forEach((a,i)=>{const [x,y]=pt(i,R*Math.max(3,a.P2)/100);g+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3" fill="var(--warm)"/>';});
-    g+='<g font-size="14" font-family="Inter,sans-serif" fill="var(--muted)">'
+    g+='<g font-size="15" font-family="Inter,sans-serif" fill="var(--muted)">'
       +'<circle cx="'+(cx-86)+'" cy="'+(cy+R+30)+'" r="5" fill="'+C+'"/><text x="'+(cx-75)+'" y="'+(cy+R+35)+'">you</text>'
       +'<circle cx="'+(cx-14)+'" cy="'+(cy+R+30)+'" r="5" fill="var(--warm)"/><text x="'+(cx-3)+'" y="'+(cy+R+35)+'">them</text></g>';
   }
   axes.forEach((a,i)=>{const [x,y]=pt(i,R+16);
     const anc=Math.abs(x-cx)<10?"middle":(x>cx?"start":"end");
-    const val=(showVals&&a.P!==undefined)?'<tspan x="'+x.toFixed(1)+'" dy="16" font-size="12" fill="var(--violet)">'+Math.round(a.P)+'%</tspan>':'';
-    g+='<text x="'+x.toFixed(1)+'" y="'+(y+4).toFixed(1)+'" text-anchor="'+anc+'" font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'+a.label+val+'</text>';});
+    const val=(showVals&&a.P!==undefined)?'<tspan x="'+x.toFixed(1)+'" dy="'+(LS+3)+'" font-size="'+(LS-2)+'" fill="var(--violet)">'+Math.round(a.P)+'%</tspan>':'';
+    g+='<text x="'+x.toFixed(1)+'" y="'+(y+4).toFixed(1)+'" text-anchor="'+anc+'" font-size="'+LS+'" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'+a.label+val+'</text>';});
   const hasP2=axes[0]&&axes[0].P2!==undefined;
   const vTop=Math.max(0,cy-R-38), vH=(R+38)*2+(hasP2?28:0)+(showVals?18:0);
   return '<svg class="journey-svg" style="max-width:'+(maxW||300)+'px;margin:0 auto;display:block" viewBox="0 '+vTop.toFixed(0)+' '+size+' '+vH.toFixed(0)+'" role="img" aria-label="radar chart">'
@@ -2186,30 +2187,46 @@ function fingerprintDims(p){
     ["subP","Su","Sublimity share"],["vitP","Vi","Vitality share"],["uneP","Un","Unease share"]].map(([k,label,name])=>({k,label,name,P:pct(k,p[k])??50}));
 }
 function dotStripSVG(dims){
-  const W=640,rowH=38,padT=32,L=248,R=620,H=padT+dims.length*rowH+8;
+  const MOB=(typeof window!=="undefined"&&window.innerWidth<640);
+  if(MOB){
+    const W=380,rowH=66,padT=36,L=14,R=366,H=padT+dims.length*rowH+6;
+    const X=P=>L+(R-L)*P/100;
+    let g='<text x="'+X(50)+'" y="18" text-anchor="middle" font-size="15" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
+    dims.forEach((d,i)=>{const top=padT+i*rowH, y=top+44;
+      g+='<text x="10" y="'+(top+18)+'" text-anchor="start" font-size="19" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
+      g+='<text x="'+(d.label.length>1?46:34)+'" y="'+(top+18)+'" text-anchor="start" font-size="18" fill="var(--muted)">'+(d.name||"")+'</text>';
+      g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
+      g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
+      g+='<line x1="'+X(50)+'" y1="'+(y-8)+'" x2="'+X(50)+'" y2="'+(y+8)+'" stroke="#554B92" stroke-width="1"/>';
+      g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="9" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
+    return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="percentile strip">'+g+'</svg>';
+  }
+  const W=660,rowH=44,padT=36,L=268,R=640,H=padT+dims.length*rowH+10;
   const X=P=>L+(R-L)*P/100;
-  let g='<text x="'+X(50)+'" y="16" text-anchor="middle" font-size="16" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
+  let g='<text x="'+X(50)+'" y="18" text-anchor="middle" font-size="20" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
   dims.forEach((d,i)=>{const y=padT+i*rowH+rowH/2;
-    g+='<text x="10" y="'+(y+4)+'" text-anchor="start" font-size="18" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
-    g+='<text x="48" y="'+(y+4)+'" text-anchor="start" font-size="17" fill="var(--muted)">'+(d.name||"")+'</text>';
+    g+='<text x="10" y="'+(y+5)+'" text-anchor="start" font-size="23" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
+    g+='<text x="58" y="'+(y+5)+'" text-anchor="start" font-size="21.5" fill="var(--muted)">'+(d.name||"")+'</text>';
     g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
     g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
-    g+='<line x1="'+X(50)+'" y1="'+(y-6)+'" x2="'+X(50)+'" y2="'+(y+6)+'" stroke="#554B92" stroke-width="1"/>';
-    g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="7" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
+    g+='<line x1="'+X(50)+'" y1="'+(y-8)+'" x2="'+X(50)+'" y2="'+(y+8)+'" stroke="#554B92" stroke-width="1"/>';
+    g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="8.5" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
   return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="percentile strip">'+g+'</svg>';
 }
+
+
 function cloudSVG(p){
   const W=620,H=346,L=64,R=600,T=18,B=272;
   const X=v=>L+(R-L)*v, Y=v=>B-(B-T)*v;
   let g='<line x1="'+L+'" y1="'+B+'" x2="'+R+'" y2="'+B+'" stroke="#4A4180" stroke-width="1.2"/><line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+B+'" stroke="#4A4180" stroke-width="1.2"/>';
   // quadrant territory names
-  g+='<g font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)" opacity="0.6">'
+  g+='<g font-size="14.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)" opacity="0.6">'
     +'<text x="'+(L+10)+'" y="'+(T+16)+'">quiet &amp; deep</text>'
     +'<text x="'+(R-8)+'" y="'+(T+16)+'" text-anchor="end">charged &amp; deep</text>'
     +'<text x="'+(L+10)+'" y="'+(B-10)+'">quiet &amp; light</text>'
     +'<text x="'+(R-8)+'" y="'+(B-10)+'" text-anchor="end">charged &amp; light</text></g>';
   // axis pole labels
-  g+='<g font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)" opacity="0.75">'
+  g+='<g font-size="14.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)" opacity="0.75">'
     +'<text x="'+L+'" y="'+(B+24)+'">calm</text><text x="'+R+'" y="'+(B+24)+'" text-anchor="end">high-energy</text>'
     +'<text x="'+(L-8)+'" y="'+(B-2)+'" text-anchor="end">light</text><text x="'+(L-8)+'" y="'+(T+10)+'" text-anchor="end">deep</text></g>';
   const col=s=>{const i=s.gems.indexOf(Math.max(...s.gems));return i===0?"var(--violet)":i===1?"var(--warm)":"var(--rose)";};
@@ -2222,7 +2239,7 @@ function cloudSVG(p){
   }
   // legend row, centered below the plot (out of the data area)
   const ly=B+52, lx=(L+R)/2;
-  g+='<g font-size="14" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'
+  g+='<g font-size="15" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'
     +'<circle cx="'+(lx-160)+'" cy="'+(ly-4)+'" r="4.5" fill="var(--violet)"/><text x="'+(lx-149)+'" y="'+ly+'">sublimity</text>'
     +'<circle cx="'+(lx-38)+'" cy="'+(ly-4)+'" r="4.5" fill="var(--warm)"/><text x="'+(lx-27)+'" y="'+ly+'">vitality</text>'
     +'<circle cx="'+(lx+72)+'" cy="'+(ly-4)+'" r="4.5" fill="var(--rose)"/><text x="'+(lx+83)+'" y="'+ly+'">unease</text></g>';
@@ -2246,9 +2263,9 @@ function ternarySVG(p,p2){
   g+='<circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="24" fill="none" stroke="var(--violet)" stroke-width="1" opacity="0.25"/>';
   g+='<circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="15" fill="none" stroke="var(--violet)" stroke-width="1.2" opacity="0.5"/>';
   g+='<circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="7" fill="var(--violet)" stroke="var(--text)" stroke-width="1.5"/>';
-  g+='<text x="'+A[0]+'" y="14" text-anchor="middle" font-size="13" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">sublimity</text>';
-  g+='<text x="'+B[0]+'" y="'+(B[1]+22)+'" text-anchor="middle" font-size="13" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">vitality</text>';
-  g+='<text x="'+C[0]+'" y="'+(C[1]+22)+'" text-anchor="middle" font-size="13" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">unease</text>';
+  g+='<text x="'+A[0]+'" y="14" text-anchor="middle" font-size="14" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">sublimity</text>';
+  g+='<text x="'+B[0]+'" y="'+(B[1]+22)+'" text-anchor="middle" font-size="14" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">vitality</text>';
+  g+='<text x="'+C[0]+'" y="'+(C[1]+22)+'" text-anchor="middle" font-size="14" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">unease</text>';
   return '<svg class="journey-svg" style="max-width:360px;margin:0 auto" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="GEMS triangle">'+g+'</svg>';
 }
 function shapeProse(p){
@@ -2334,7 +2351,7 @@ function renderReport(p){
     <div class="card">
       <h3>Personality estimates · Big Five</h3>
       <p class="viz-help">The shape is plotted as percentiles: each point is where you sit among listeners, not the raw score on the sliders below.</p>
-      ${radarSVG([{label:"Openness",P:pct("O",p.O)??50},{label:"Agreeableness",P:pct("Ag",p.Ag)??50},{label:"Conscientiousness",P:pct("Co",p.Co)??50},{label:"Extraversion",P:pct("Ex",p.Ex)??50},{label:"Neuroticism",P:pct("Ne",p.Ne)??50}],560,620,140,null,true)}
+      ${radarSVG([{label:"Openness",P:pct("O",p.O)??50},{label:"Agreeableness",P:pct("Ag",p.Ag)??50},{label:"Conscientiousness",P:pct("Co",p.Co)??50},{label:"Extraversion",P:pct("Ex",p.Ex)??50},{label:"Neuroticism",P:pct("Ne",p.Ne)??50}],560,620,140,null,true,17.5)}
       <div style="margin-top:7px"></div>
       ${traitRow("Openness",p.O,(salience(p)[0]&&salience(p)[0].k==="O"?"The cleanest line in your whole list. It points to ":"It points to ")+traitNote("O",p.O)+".")}
       ${traitRow("Extraversion",p.Ex,"On people: "+traitNote("Ex",p.Ex)+".")}
@@ -2346,7 +2363,7 @@ function renderReport(p){
     <div class="card">
       <h3>Listening style</h3>
       <p class="viz-help">A spectrum from the Empathizing/Systemizing theory of cognition. <b>Empathizers</b> are moved by warmth and human texture, a voice, a string, an ache. <b>Systemizers</b> are gripped by structure, how a track is built, how it locks together, where it's going. The dot is where your list sits between the two.</p>
-      <p style="font-size:14px;color:var(--muted);margin-bottom:4px">Empathizer ←→ Systemizer</p>
+      <p style="font-size:15px;color:var(--muted);margin-bottom:4px">Empathizer ←→ Systemizer</p>
       <div class="lean"><div class="mid"></div><div class="dot" data-x="${leanPct}"></div></div>
       <div class="lean-ends"><span>warm · emotional timbre</span><span>structural · engineered</span></div>
       <p style="margin-top:14px">${p.lean<-.2?"You lean empathizer: mellow, emotionally-loaded textures and strings are what reach in and grab you."
@@ -2370,7 +2387,7 @@ function renderReport(p){
       <h3>Sensation seeking · SSS</h3>
       ${traitRow("Experience seeking, novelty, variety, range",p.sssExperience,sssNote("sssExperience",p.sssExperience))}
       ${traitRow("Thrill / disinhibition, intensity, risk",p.sssThrill,sssNote("sssThrill",p.sssThrill))}
-      <p style="margin-top:4px;color:var(--muted);font-size:13.5px">${
+      <p style="margin-top:4px;color:var(--muted);font-size:14.5px">${
         p.sssExperience-p.sssThrill>14 ? "High on experience, low on thrill: you're chasing novelty and richness, not raw volume. This is the read underneath \u201Ccontrolled arousal, not brute force.\u201D"
         : p.sssThrill-p.sssExperience>14 ? "You tilt toward intensity: loudness, edge, and risk over mere novelty."
         : "Novelty-seeking and intensity-seeking run neck and neck: you want experiences both wide and high-voltage."
@@ -2393,7 +2410,7 @@ function renderReport(p){
       ${traitRow("Sophisticated",p.music.sophisticated,musicNote("sophisticated",p.music.sophisticated))}
       ${traitRow("Intense",p.music.intense,musicNote("intense",p.music.intense))}
       ${traitRow("Contemporary",p.music.contemporary,musicNote("contemporary",p.music.contemporary))}
-      <p style="font-size:14px;color:var(--muted);margin:18px 0 4px">Hedonic ←→ Eudaimonic</p>
+      <p style="font-size:15px;color:var(--muted);margin:18px 0 4px">Hedonic ←→ Eudaimonic</p>
       <p class="viz-help" style="margin-top:0">Two reasons people reach for music. <b>Hedonic</b> is for pleasure and lift in the moment, to feel good now. <b>Eudaimonic</b> is for meaning, depth, and contemplation, to feel something <i>true</i>. The dot marks which way you tilt.</p>
       <div class="lean"><div class="mid"></div><div class="dot" data-x="${Math.round((1-(p.heLean+1)/2)*100)}"></div></div>
       <div class="lean-ends"><span>pleasure · uplift</span><span>meaning · contemplation</span></div>
@@ -2424,20 +2441,20 @@ function renderReport(p){
 
     <div class="card">
       <h3>The most exact sentence I can justify</h3>
-      <p style="font-family:'Instrument Serif',serif;font-size:21px;line-height:1.35">${exactSentence(p)}</p>
+      <p style="font-family:'Instrument Serif',serif;font-size:22px;line-height:1.35">${exactSentence(p)}</p>
     </div>
 
     <div class="card">
       <h3>Share &amp; compare</h3>
       <p class="viz-help">Your results as a link. Anyone who opens it sees this exact reading; the short code at the end is your list.</p>
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-        <input id="shareUrl" readonly value="${shareUrl(p)}" style="flex:1;min-width:220px;background:var(--ground);border:1px solid var(--line);border-radius:10px;color:var(--muted);padding:10px 12px;font-family:'Space Mono',monospace;font-size:12px" onclick="this.select()">
+        <input id="shareUrl" readonly value="${shareUrl(p)}" style="flex:1;min-width:220px;background:var(--ground);border:1px solid var(--line);border-radius:10px;color:var(--muted);padding:10px 12px;font-family:'Space Mono',monospace;font-size:13px" onclick="this.select()">
         <button class="go" style="padding:10px 18px" onclick="navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('shareUrl').value).then(()=>{this.textContent='Copied';setTimeout(()=>this.textContent='Copy link',1400)})">Copy link</button>
       </div>
       <p class="subh">Compare with someone</p>
       <p class="viz-help">Paste their link or code below to read the two lists against each other: overall compatibility, where you match, and where you differ.</p>
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-        <input id="cmpCode" placeholder="Paste their link or code" style="flex:1;min-width:220px;background:var(--ground);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:10px 12px;font-family:inherit;font-size:13px">
+        <input id="cmpCode" placeholder="Paste their link or code" style="flex:1;min-width:220px;background:var(--ground);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:10px 12px;font-family:inherit;font-size:14px">
         <button class="go" style="padding:10px 18px" onclick="runCompare()">Compare</button>
       </div>
       <div id="cmpOut" style="margin-top:14px"></div>
@@ -2448,7 +2465,7 @@ function renderReport(p){
       <p class="subh">Extended compatibility report</p>
       <p class="viz-help">A deeper two-person reading: every dimension side by side, friction points and how they play out, and what each of you should know going in.</p>
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-        <input id="extCode" placeholder="Paste their link or code" style="flex:1;min-width:220px;background:var(--ground);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:10px 12px;font-family:inherit;font-size:13px">
+        <input id="extCode" placeholder="Paste their link or code" style="flex:1;min-width:220px;background:var(--ground);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:10px 12px;font-family:inherit;font-size:14px">
         <button class="go" style="padding:10px 18px" onclick="unlockExtended(this)">Unlock \u00b7 $1</button>
       </div>
       <div id="extOut" style="margin-top:14px"></div>
@@ -2497,25 +2514,47 @@ function runCompare(){
 const PAY_LINK_MATCH="";   // paste a Stripe/Gumroad payment link here to arm the paywall
 const PAY_LINK_EXTENDED=""; // future: extended compatibility report
 
+function pctv(key,q){ const t=PCT[key]; return t? t[Math.max(0,Math.min(20,Math.round(q/5)))] : 0.5; }
 function perfectMatch(p){
-  // Kindred where similarity counts (openness/depth, the values register of the list),
-  // steady and warm by construction (the traits that help any pairing), contrasting
-  // only as texture (energy, E/S angle).
+  // PERSONALITY-FIRST pipeline.
+  // Step 1: define the ideal match's Big Five from the evidence:
+  //   Openness mirrored to yours (the one trait where similarity counts),
+  //   Neuroticism low + Agreeableness high (partner main effects),
+  //   Conscientiousness solid, Extraversion near yours, pulled gently to center.
+  const uO=pct("O",p.O)??50, uEx=pct("Ex",p.Ex)??50;
+  const T={ O:uO, Ne:20, Ag:75, Co:Math.max(55,pct("Co",p.Co)??50), Ex:uEx+(55-uEx)*0.35 };
+
+  // Step 2: translate that personality into sound, via the trait-music links the
+  // engine itself uses: Openness -> depth appetite; low Neuroticism -> low unease,
+  // resolved rather than stormy; Agreeableness -> warmth, sincerity, empathizer
+  // timbres; Conscientiousness -> structure; Extraversion -> energy level.
   const t={
-    ar: p.ar + (0.56-p.ar)*0.38,
-    va: Math.min(0.75, p.va + 0.08),
-    de: Math.max(0.45, p.de*0.94 + 0.03),
-    sub: p.subP*0.8 + 0.10,
-    vit: p.vitP*0.8 + 0.11,
-    une: Math.min(p.uneP*0.75 + 0.03, 0.42)
+    de: pctv("de",T.O),
+    une: pctv("uneP",T.Ne),
+    va: pctv("va",68),
+    ar: pctv("ar",T.Ex),
+    sub: Math.max(.08,Math.min(.85, p.subP*0.55 + (1-T.Ex/100)*0.33 )),
+    vit: Math.max(.08,Math.min(.85, p.vitP*0.55 + (T.Ex/100)*0.33 ))
   };
+  const AG_TIM=["acoustic","airy_vocals","strings","choir"], CO_STR=["build_release","ostinato","four_floor","motif_transform"];
+  const myLyr=Object.entries(p.LY||{}).filter(([k,v])=>v>=.3&&k!=="none_instrumental").map(([k])=>k);
+
+  // Step 3: songs are selected as evidence of that personality, while keeping the
+  // values channel (your genres, your themes) that makes overlap bond.
   const inList=new Set(chosen);
   const myGenres=new Set(p.pgGenres);
-  const myLyr=Object.entries(p.LY||{}).filter(([k,v])=>v>=.3&&k!=="none_instrumental").map(([k])=>k);
-  const dist=s=>Math.abs(s.ar-t.ar)*1.0+Math.abs(s.va-t.va)*0.9+Math.abs(s.de-t.de)*1.5
-    +Math.abs(s.gems[0]-t.sub)*0.9+Math.abs(s.gems[1]-t.vit)*0.9+Math.abs(s.gems[2]-t.une)*0.8
-    -(s.lyr&&s.lyr.some(l=>myLyr.includes(l))?0.06:0);
-  const scored=DB.map((s,i)=>({s,i,d:s?dist(s):9})).filter(x=>x.s&&!inList.has(x.i)).sort((a,b)=>a.d-b.d);
+  const score=s=>{
+    let d=Math.abs(s.de-t.de)*1.4 + Math.abs(s.gems[2]-t.une)*1.1 + Math.abs(s.va-t.va)*0.8 + Math.abs(s.ar-t.ar)*0.9
+      + Math.abs(s.gems[0]-t.sub)*0.7 + Math.abs(s.gems[1]-t.vit)*0.7;
+    d -= ((s.tim||[]).some(x=>AG_TIM.includes(x))?0.10:0)*(T.Ag/75);
+    d -= ((s.str||[]).some(x=>CO_STR.includes(x))?0.07:0)*(T.Co/75);
+    d -= ((s.lyr||[]).some(l=>myLyr.includes(l))?0.06:0);
+    const social=(s.lyr||[]).includes("social_bond")||(s.lyr||[]).includes("joy_celebration");
+    d += social ? (T.Ex<35?0.09:-0.04) : (T.Ex>=65?0.04:0);
+    d -= ((s.lyr||[]).includes("devotion")||(s.lyr||[]).includes("social_bond")?0.05:0)*(T.Ag/75);
+    return d;
+  };
+  const scored=DB.map((s,i)=>({s,i,d:s?score(s):9})).filter(x=>x.s&&!inList.has(x.i)).sort((a,b)=>a.d-b.d);
   const takenArtists={}, common=[], bring=[];
   for(const x of scored){
     const a=x.s.a; if((takenArtists[a]||0)>=2) continue;
@@ -2523,7 +2562,7 @@ function perfectMatch(p){
     else if(!myGenres.has(x.s.pg) && bring.length<4){ bring.push(x.s); takenArtists[a]=(takenArtists[a]||0)+1; }
     if(common.length>=6&&bring.length>=4) break;
   }
-  const openLine = pct("O",p.O)>=75
+  const openLine = uO>=75
     ? "They match your appetite for depth and the unfamiliar, which matters more than it sounds: openness is the one trait where being alike genuinely predicts staying compatible, because it decides the size of the aesthetic life you would share."
     : "They match your relationship to novelty, close to your comfort zone rather than dragging you out of it, and that alignment is the one similarity that research says actually counts.";
   const steadyLine = "By construction they run steady and warm, low on volatility, quick to sincerity, because those two qualities lift a pairing no matter who you are.";
@@ -2536,7 +2575,7 @@ function perfectMatch(p){
     : p.lean>0.15?" And they hear the voice and the warmth a bit more than you do, so they will pull feeling out of tracks you admired for their engineering."
     : "");
   const who=openLine+" "+steadyLine+" "+valuesLine+" "+texture;
-  return {who,common,bring};
+  return {who,common,bring,targets:T};
 }
 function perfectMatchHTML(p){
   const m=perfectMatch(p);
@@ -2547,12 +2586,36 @@ function perfectMatchHTML(p){
   const axes=[["O","Openness"],["Ag","Agreeableness"],["Co","Conscientiousness"],["Ex","Extraversion"],["Ne","Neuroticism"]]
     .map(([k,label])=>({label,P:P(k,mp[k])}));
 
-  // ---- The traits that would matter: personality -> what their music sounds like ----
-  const deWord = mp.de>=.78?"they go where the craft is, music that repays full attention":mp.de>=.6?"they want a song well made, but never at the cost of feeling":"they trust feel over polish";
-  const curiosity = "<b style=\"color:var(--text)\">Curiosity.</b> This is the trait music reveals most clearly, and theirs runs at your level. In practice "+deWord+", and the unfamiliar reads as an invitation rather than a cost. It matters because it decides the size of the aesthetic life you would share: what you watch, where you go, what gets played in the car. It is the one dimension where being alike genuinely predicts staying compatible.";
-  const steadiness = "<b style=\"color:var(--text)\">Steadiness.</b> Built low on volatility, and you would hear it in the list: even their darker picks resolve, "+(mp.va>=.55?"and the overall cast runs bright":"and the overall cast stays level rather than stormy")+". People who use music this way tend to regulate rather than amplify, reaching for a song to settle a feeling, not to feed it. A steady temperament is the single strongest thing a partner brings, regardless of matching.";
-  const warmth = "<b style=\"color:var(--text)\">Warmth.</b> Their taste points at sincerity: voices that mean it, arrangements that do not hide behind irony. Warmth in a partner independently predicts easier day-to-day, and in music it shows up exactly there, in what someone lets a song say plainly.";
-  const energy = "<b style=\"color:var(--text)\">Energy.</b> "+(mp.ar>p.ar+.05?"Their list runs a notch hotter than yours, more forward motion in the room they set.":mp.ar<p.ar-.05?"Their list runs a notch calmer than yours, they bring the temperature down rather than up.":"Their list idles at about your temperature.")+" Energy preference tracks social rhythm, so this is the practical trait: it predicts what a shared evening actually sounds like. "+(mp.subP>=mp.vitP?"And the payoff they chase is the one you chase, lift and scale rather than pure motion, which means the same moments in a song land for both of you.":"And the payoff they chase is the one you chase, motion and pull, which means the same moments in a song land for both of you.");
+  // ---- The traits that would matter: anchored in YOUR reading, so no two are alike ----
+  const uO=P("O",p.O), uNe=P("Ne",p.Ne), uAg=P("Ag",p.Ag), uEx=P("Ex",p.Ex), uDe=P("de",p.de);
+  const deep=[...p.songs].sort((x,y)=>y.de-x.de)[0];
+  const g1=p.pgGenres[0]||"music", g2=p.pgGenres[1]||g1;
+
+  const curiosity = "<b style=\"color:var(--text)\">Curiosity.</b> "+(
+    uO>=90 ? "Yours runs in the top "+Math.max(1,100-uO)+"% of listeners, so theirs has to keep pace or the whole thing stalls. Built to match it, they are the kind of person who already knows why "+deep.t+" is on your list, and does not need the case made."
+    : uO>=70 ? "Yours sits clearly above most listeners, around the "+uO+"th percentile, and theirs is set to match: comfortable in "+g1+", curious past it, and unthreatened by a song that asks for patience. "+deep.t+" would not be a hard sell."
+    : uO>=40 ? "Yours reads near the middle: open to the new when it earns its way in. Theirs is matched there rather than above it, which matters; a partner who always wants stranger music than you do is a quiet tax. With them, "+g1+" is common ground, not a starting point to be improved on."
+    : "Yours leans toward the proven, and theirs is deliberately set the same way. No missionary energy, no homework playlists; the pleasure of the known, shared. That alignment is the one similarity research says genuinely counts."
+  );
+  const steadiness = "<b style=\"color:var(--text)\">Steadiness.</b> "+(
+    uNe<=25 ? "Built low on volatility, which you will recognize: your own reading runs unusually calm, bottom "+Math.max(1,uNe)+"% on musical unease. Two regulators means the bad week meets a level room from either side."
+    : uNe>=70 ? "Built low on volatility, and for you that is the load-bearing trait: your list runs high on tension, top "+Math.max(1,100-uNe)+"% among listeners, so the pairing needs one person whose instinct is to settle rather than escalate. They are the damper to your amplifier."
+    : "Built low on volatility. Your own reading sits mid-range, so this is not a rescue; it is margin. People who use music this way reach for a song to settle a feeling, not to feed it."
+  )+(mp.va>=.55?" You would hear it in their list: even the darker picks resolve, and the overall cast runs bright.":" You would hear it in their list: even the darker picks resolve, and the cast stays level rather than stormy.");
+  const warmth = "<b style=\"color:var(--text)\">Warmth.</b> "+(
+    uAg>=70 ? "Their taste points at sincerity, and so does yours, top "+Math.max(1,100-uAg)+"% on warmth. Two lists full of voices that mean it is about as good a values signal as music can send."
+    : uAg<=30 ? "Their taste points at sincerity, which will read almost foreign against your list, where edge outranks comfort. That is deliberate: warmth in a partner predicts easier day-to-day regardless of your own reading, and yours suggests you need it supplied more than mirrored."
+    : "Their taste points at sincerity: voices that mean it, arrangements that do not hide behind irony. Warmth in a partner independently predicts easier day-to-day, and in music it shows up exactly there, in what someone lets a song say plainly."
+  );
+  const arDiff=mp.ar-p.ar;
+  const energy = "<b style=\"color:var(--text)\">Energy.</b> "+(
+    arDiff>.05 ? "Their list runs a notch hotter than yours, the counterweight to a taste that idles "+(uDe>=70?"deep and":"")+" low. In practice a shared evening probably starts in your "+g1+" and drifts brighter from there."
+    : arDiff<-.05 ? "Their list runs a notch calmer than yours, the hand on the dial when the room has been loud all day. A shared evening probably starts in your "+g1+" and settles quieter from there."
+    : "Their list idles at about your temperature, so neither of you is always the one adjusting the room."
+  )+" "+(p.subP>=p.vitP
+    ? "And the payoff they chase is yours: lift and scale rather than pure motion, the same moments landing for both of you."
+    : "And the payoff they chase is yours: motion and pull, the same moments landing for both of you.")
+  +(uEx<=25?" Given how inward your own listening runs, bottom "+Math.max(1,uEx)+"% on social energy, most of this happens at close range, which suits them fine.":"");
   const traits=[curiosity,steadiness,warmth,energy];
 
   // ---- How they would show up: grounded, derived from the traits above ----
@@ -2617,13 +2680,30 @@ function unlockMatch(btn){
 }
 
 function pairedStripSVG(dims){
-  const W=640,rowH=38,padT=34,L=248,R=620,H=padT+dims.length*rowH+10;
+  const MOB=(typeof window!=="undefined"&&window.innerWidth<640);
+  if(MOB){
+    const W=380,rowH=64,padT=42,L=14,R=366,H=padT+dims.length*rowH+6;
+    const X=P=>L+(R-L)*P/100;
+    let g='<g font-size="15" font-family="Inter,sans-serif" fill="var(--muted)">'
+      +'<circle cx="'+(W/2-72)+'" cy="14" r="5" fill="var(--violet)"/><text x="'+(W/2-61)+'" y="19">you</text>'
+      +'<circle cx="'+(W/2+16)+'" cy="14" r="5" fill="none" stroke="var(--warm)" stroke-width="2.5"/><text x="'+(W/2+27)+'" y="19">them</text></g>';
+    dims.forEach((d,i)=>{const top=padT+i*rowH, y=top+42;
+      g+='<text x="10" y="'+(top+16)+'" text-anchor="start" font-size="18" fill="var(--muted)">'+d.label+'</text>';
+      g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
+      g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
+      const xa=X(d.pa),xb=X(d.pb);
+      g+='<line x1="'+xa+'" y1="'+y+'" x2="'+xb+'" y2="'+y+'" stroke="#554B92" stroke-width="2.5"/>';
+      g+='<circle cx="'+xa+'" cy="'+y+'" r="8" fill="var(--violet)" stroke="#0E0B1A" stroke-width="1"/>';
+      g+='<circle cx="'+xb+'" cy="'+y+'" r="8" fill="none" stroke="var(--warm)" stroke-width="2.5"/>';});
+    return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="paired strip">'+g+'</svg>';
+  }
+  const W=660,rowH=38,padT=34,L=268,R=640,H=padT+dims.length*rowH+10;
   const X=P=>L+(R-L)*P/100;
-  let g='<g font-size="14" font-family="Inter,sans-serif" fill="var(--muted)">'
+  let g='<g font-size="15" font-family="Inter,sans-serif" fill="var(--muted)">'
     +'<circle cx="'+(L+40)+'" cy="12" r="5" fill="var(--violet)"/><text x="'+(L+51)+'" y="17">you</text>'
-    +'<circle cx="'+(L+130)+'" cy="12" r="5" fill="var(--warm)"/><text x="'+(L+141)+'" y="17">them</text></g>';
+    +'<circle cx="'+(L+130)+'" cy="12" r="5" fill="none" stroke="var(--warm)" stroke-width="2.5"/><text x="'+(L+141)+'" y="17">them</text></g>';
   dims.forEach((d,i)=>{const y=padT+i*rowH+rowH/2;
-    g+='<text x="10" y="'+(y+5)+'" text-anchor="start" font-size="17" fill="var(--muted)">'+d.label+'</text>';
+    g+='<text x="10" y="'+(y+5)+'" text-anchor="start" font-size="18" fill="var(--muted)">'+d.label+'</text>';
     g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
     g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
     const xa=X(d.pa),xb=X(d.pb);
@@ -2632,6 +2712,7 @@ function pairedStripSVG(dims){
     g+='<circle cx="'+xb+'" cy="'+y+'" r="7" fill="none" stroke="var(--warm)" stroke-width="2.5"/>';});
   return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="paired strip">'+g+'</svg>';
 }
+
 function journeyHeights(p){
   // Percentile-driven so arcs genuinely differ between people: start height, peak,
   // and tail all spread across the real population range instead of bunching.
@@ -2669,9 +2750,9 @@ function duoJourneySVG(a,b){
   g+='<circle cx="'+A.xs[4]+'" cy="'+A.ys[4].toFixed(1)+'" r="4" fill="var(--violet)"/>';
   g+='<circle cx="'+B2.xs[4]+'" cy="'+B2.ys[4].toFixed(1)+'" r="4" fill="var(--warm)"/>';
   const stages=["orient","invite","accrete","horizon","arrival","afterglow"];
-  g+='<g font-size="12.5" font-family="Inter,sans-serif" fill="var(--muted)" opacity="0.8">'
+  g+='<g font-size="13.5" font-family="Inter,sans-serif" fill="var(--muted)" opacity="0.8">'
     +A.xs.map((x,i)=>'<text x="'+x+'" y="'+(H-4)+'" text-anchor="middle">'+stages[i]+'</text>').join("")+'</g>';
-  g+='<g font-size="14" font-family="Inter,sans-serif" fill="var(--muted)">'
+  g+='<g font-size="15" font-family="Inter,sans-serif" fill="var(--muted)">'
     +'<circle cx="'+(W/2-100)+'" cy="14" r="5" fill="var(--violet)"/><text x="'+(W/2-89)+'" y="19">your arc</text>'
     +'<circle cx="'+(W/2+10)+'" cy="14" r="5" fill="var(--warm)"/><text x="'+(W/2+21)+'" y="19">their arc</text></g>';
   return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="duo journey">'+g+'</svg>';
@@ -2680,14 +2761,14 @@ function duoCloudSVG(a,b){
   const W=620,H=350,L=64,R=600,T=18,B=272;
   const X=v=>L+(R-L)*v, Y=v=>B-(B-T)*v;
   let g='<line x1="'+L+'" y1="'+B+'" x2="'+R+'" y2="'+B+'" stroke="#4A4180" stroke-width="1.2"/><line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+B+'" stroke="#4A4180" stroke-width="1.2"/>';
-  g+='<g font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)" opacity="0.75">'
+  g+='<g font-size="14.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)" opacity="0.75">'
     +'<text x="'+L+'" y="'+(B+24)+'">calm</text><text x="'+R+'" y="'+(B+24)+'" text-anchor="end">high-energy</text>'
     +'<text x="'+(L-8)+'" y="'+(B-2)+'" text-anchor="end">light</text><text x="'+(L-8)+'" y="'+(T+10)+'" text-anchor="end">deep</text></g>';
   const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
   a.songs.forEach(s=>{g+='<circle cx="'+X(s.ar).toFixed(1)+'" cy="'+Y(s.de).toFixed(1)+'" r="6" fill="var(--violet)" fill-opacity="0.9" stroke="#0E0B1A" stroke-width="1"><title>'+esc(s.t)+' \u00b7 '+esc(s.a)+'</title></circle>';});
   b.songs.forEach(s=>{g+='<circle cx="'+X(s.ar).toFixed(1)+'" cy="'+Y(s.de).toFixed(1)+'" r="6" fill="none" stroke="var(--warm)" stroke-width="2"><title>'+esc(s.t)+' \u00b7 '+esc(s.a)+'</title></circle>';});
   const ly=B+52, lx=(L+R)/2;
-  g+='<g font-size="14" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'
+  g+='<g font-size="15" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'
     +'<circle cx="'+(lx-120)+'" cy="'+(ly-4)+'" r="5" fill="var(--violet)"/><text x="'+(lx-109)+'" y="'+ly+'">your songs</text>'
     +'<circle cx="'+(lx+18)+'" cy="'+(ly-4)+'" r="5" fill="none" stroke="var(--warm)" stroke-width="2"/><text x="'+(lx+29)+'" y="'+ly+'">their songs</text></g>';
   return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="duo cloud">'+g+'</svg>';
@@ -2777,7 +2858,7 @@ function extendedReportHTML(a,b,theirIds){
 
   const radAxes=[["O","Openness"],["Ag","Agreeableness"],["Co","Conscientiousness"],["Ex","Extraversion"],["Ne","Neuroticism"]]
     .map(([k,label])=>({label,P:P(k,a[k]),P2:P(k,b[k])}));
-  return '<p style="font-family:\'Instrument Serif\',serif;font-size:31px;margin:6px 0 2px">'+score+'% compatible</p>'
+  return '<p style="font-family:\'Instrument Serif\',serif;font-size:32px;margin:6px 0 2px">'+score+'% compatible</p>'
     +'<p style="margin:4px 0 14px">'+opening+'</p>'
     +'<p class="viz-help" style="margin:0 0 4px">Two personalities, one shape. Solid is you, dashed is them; where the shapes track each other, so do you.</p>'
     +radarSVG(radAxes,560,620,140)
@@ -2890,7 +2971,7 @@ function compareHTML(a,b,theirIds){
   const close=[...rows].sort((x,y)=>x.gap-y.gap).slice(0,3);
   const far=[...rows].sort((x,y)=>y.gap-x.gap).slice(0,2);
 
-  return '<p style="font-family:\'Instrument Serif\',serif;font-size:31px;margin:6px 0 2px">'+score+'% compatible</p>'
+  return '<p style="font-family:\'Instrument Serif\',serif;font-size:32px;margin:6px 0 2px">'+score+'% compatible</p>'
     +'<p style="margin:4px 0 12px">'+verdict+'</p>'
     +'<p class="viz-help" style="margin:0 0 4px"><b style="color:var(--text)">What you each bring:</b> '+bring1+bring2+'</p>'
     +'<p class="viz-help" style="margin:0 0 4px"><b style="color:var(--text)">Aligned where it matters:</b> '+openLine+valLine+'</p>'
