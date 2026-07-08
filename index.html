@@ -2149,7 +2149,7 @@ function uncannyTells(p){
    ================================================================= */
 /* ---- Visual builders: radar, dot-interval strip, song cloud, GEMS triangle.
    All plot PERCENTILES vs other listeners, so shapes genuinely differ per person. ---- */
-function radarSVG(axes,size,maxW,labelPad,color){
+function radarSVG(axes,size,maxW,labelPad,color,showVals){
   const C=color||"var(--violet)";
   const LP=labelPad||58;
   const cx=size/2, cy=size/2+6, R=size/2-LP;
@@ -2162,10 +2162,20 @@ function radarSVG(axes,size,maxW,labelPad,color){
   const poly=axes.map((a,i)=>pt(i,R*Math.max(3,a.P)/100).map(x=>x.toFixed(1)).join(",")).join(" ");
   g+='<polygon points="'+poly+'" fill="url(#radGrad)" fill-opacity="0.28" stroke="'+C+'" stroke-width="2" stroke-linejoin="round"/>';
   axes.forEach((a,i)=>{const [x,y]=pt(i,R*Math.max(3,a.P)/100);g+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3" fill="'+C+'"/>';});
+  if(axes[0]&&axes[0].P2!==undefined){
+    const poly2=axes.map((a,i)=>pt(i,R*Math.max(3,a.P2)/100).map(x=>x.toFixed(1)).join(",")).join(" ");
+    g+='<polygon points="'+poly2+'" fill="var(--warm)" fill-opacity="0.10" stroke="var(--warm)" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round"/>';
+    axes.forEach((a,i)=>{const [x,y]=pt(i,R*Math.max(3,a.P2)/100);g+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3" fill="var(--warm)"/>';});
+    g+='<g font-size="14" font-family="Inter,sans-serif" fill="var(--muted)">'
+      +'<circle cx="'+(cx-86)+'" cy="'+(cy+R+30)+'" r="5" fill="'+C+'"/><text x="'+(cx-75)+'" y="'+(cy+R+35)+'">you</text>'
+      +'<circle cx="'+(cx-14)+'" cy="'+(cy+R+30)+'" r="5" fill="var(--warm)"/><text x="'+(cx-3)+'" y="'+(cy+R+35)+'">them</text></g>';
+  }
   axes.forEach((a,i)=>{const [x,y]=pt(i,R+16);
     const anc=Math.abs(x-cx)<10?"middle":(x>cx?"start":"end");
-    g+='<text x="'+x.toFixed(1)+'" y="'+(y+4).toFixed(1)+'" text-anchor="'+anc+'" font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'+a.label+'</text>';});
-  const vTop=Math.max(0,cy-R-38), vH=(R+38)*2;
+    const val=(showVals&&a.P!==undefined)?'<tspan x="'+x.toFixed(1)+'" dy="16" font-size="12" fill="var(--violet)">'+Math.round(a.P)+'%</tspan>':'';
+    g+='<text x="'+x.toFixed(1)+'" y="'+(y+4).toFixed(1)+'" text-anchor="'+anc+'" font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'+a.label+val+'</text>';});
+  const hasP2=axes[0]&&axes[0].P2!==undefined;
+  const vTop=Math.max(0,cy-R-38), vH=(R+38)*2+(hasP2?28:0)+(showVals?18:0);
   return '<svg class="journey-svg" style="max-width:'+(maxW||300)+'px;margin:0 auto;display:block" viewBox="0 '+vTop.toFixed(0)+' '+size+' '+vH.toFixed(0)+'" role="img" aria-label="radar chart">'
     +'<defs><linearGradient id="radGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--cool)"/><stop offset=".55" stop-color="var(--violet)"/><stop offset="1" stop-color="var(--warm)"/></linearGradient></defs>'+g+'</svg>';
 }
@@ -2218,7 +2228,7 @@ function cloudSVG(p){
     +'<circle cx="'+(lx+72)+'" cy="'+(ly-4)+'" r="4.5" fill="var(--rose)"/><text x="'+(lx+83)+'" y="'+ly+'">unease</text></g>';
   return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="song cloud">'+g+'</svg>';
 }
-function ternarySVG(p){
+function ternarySVG(p,p2){
   const W=360,H=316;
   const A=[W/2,26],B=[46,H-40],C=[W-46,H-40]; // A=sublimity(top) B=vitality(left) C=unease(right)
   const tot=p.subP+p.vitP+p.uneP||1;
@@ -2229,6 +2239,10 @@ function ternarySVG(p){
     const m=(P,Q)=>[P[0]+(Q[0]-P[0])*f,P[1]+(Q[1]-P[1])*f];
     [[m(A,B),m(A,C)],[m(B,A),m(B,C)],[m(C,A),m(C,B)]].forEach(([p1,p2])=>{
       g+='<line x1="'+p1[0].toFixed(1)+'" y1="'+p1[1].toFixed(1)+'" x2="'+p2[0].toFixed(1)+'" y2="'+p2[1].toFixed(1)+'" stroke="#4A4180" stroke-width="0.6" opacity="0.9"/>';});});
+  if(p2){const tot2=p2.subP+p2.vitP+p2.uneP||1;
+    const qx=(p2.subP/tot2)*A[0]+(p2.vitP/tot2)*B[0]+(p2.uneP/tot2)*C[0];
+    const qy=(p2.subP/tot2)*A[1]+(p2.vitP/tot2)*B[1]+(p2.uneP/tot2)*C[1];
+    g+='<circle cx="'+qx.toFixed(1)+'" cy="'+qy.toFixed(1)+'" r="7" fill="none" stroke="var(--warm)" stroke-width="2.5"/>';}
   g+='<circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="24" fill="none" stroke="var(--violet)" stroke-width="1" opacity="0.25"/>';
   g+='<circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="15" fill="none" stroke="var(--violet)" stroke-width="1.2" opacity="0.5"/>';
   g+='<circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="7" fill="var(--violet)" stroke="var(--text)" stroke-width="1.5"/>';
@@ -2261,19 +2275,7 @@ function renderReport(p){
   // sublime lists trace one rising arc with a long elevated tail; vitality/aggression
   // lists start hot, hold a broad plateau, then drop off a cliff at the afterglow.
   const W=620,H=170,padX=28,padY=20;
-  const f0=0.08+0.34*p.ar;                                                   // start height (energy)
-  const climax=Math.min(0.96, 0.44+0.52*Math.max(p.buildDensity,0.6*p.chillsDensity,0.55*p.ar));
-  const span=Math.max(0.05,climax-f0);
-  const plateau=p.vitP>p.subP?1:0;                                           // vitality = broad top
-  const heights=[
-    f0,                                                                      // orient
-    f0 + span*(plateau?0.55:0.26) + 0.05*p.va,                               // invite
-    f0 + span*(plateau?0.80:0.48),                                           // accrete
-    f0 + span*(plateau?0.95:0.74),                                           // horizon
-    climax,                                                                  // arrival (the peak)
-    p.subP>=p.vitP ? Math.min(climax-0.05, 0.26+0.34*p.subP)                 // sublime: long high tail
-                   : Math.max(0.05, f0-0.10)                                 // vitality: cliff drop
-  ].map(h=>Math.max(0.04,Math.min(0.96,h)));
+  const heights=journeyHeights(p);
   const xs=heights.map((_,i)=>padX+i*( (W-2*padX)/(heights.length-1) ));
   const ys=heights.map(h=>H-padY-h*(H-2*padY));
   let path=`M ${xs[0]} ${ys[0]}`;
@@ -2331,7 +2333,8 @@ function renderReport(p){
 
     <div class="card">
       <h3>Personality estimates · Big Five</h3>
-      ${radarSVG([{label:"Openness",P:pct("O",p.O)??50},{label:"Agreeableness",P:pct("Ag",p.Ag)??50},{label:"Conscientiousness",P:pct("Co",p.Co)??50},{label:"Extraversion",P:pct("Ex",p.Ex)??50},{label:"Neuroticism",P:pct("Ne",p.Ne)??50}],560,620,140)}
+      <p class="viz-help">The shape is plotted as percentiles: each point is where you sit among listeners, not the raw score on the sliders below.</p>
+      ${radarSVG([{label:"Openness",P:pct("O",p.O)??50},{label:"Agreeableness",P:pct("Ag",p.Ag)??50},{label:"Conscientiousness",P:pct("Co",p.Co)??50},{label:"Extraversion",P:pct("Ex",p.Ex)??50},{label:"Neuroticism",P:pct("Ne",p.Ne)??50}],560,620,140,null,true)}
       <div style="margin-top:7px"></div>
       ${traitRow("Openness",p.O,(salience(p)[0]&&salience(p)[0].k==="O"?"The cleanest line in your whole list. It points to ":"It points to ")+traitNote("O",p.O)+".")}
       ${traitRow("Extraversion",p.Ex,"On people: "+traitNote("Ex",p.Ex)+".")}
@@ -2556,8 +2559,15 @@ function perfectMatchHTML(p){
   const show1 = P("Ex",mp.Ex)>=60
     ? "Music with them defaults to shared: playlists are built for rooms, and your favorites get aired in company."
     : "Music with them defaults to close range: they play you things directly and pay attention to what lands.";
-  const show2 = "Because they regulate rather than amplify, a bad week meets a steadier room, and disagreement about a song stays about the song.";
-  const show3 = "And because the curiosity is mutual, the collection compounds: what either of you finds becomes something you both have.";
+  const show2 = P("Ex",mp.Ex)>=60
+    ? "In an ordinary week that looks like a song queued for the drive without comment, and the volume going up a notch when something of yours comes on."
+    : "In an ordinary week that looks like a link sent at some odd hour with no message attached, because the song is the message.";
+  const show3 = "When the week goes badly, they reach for the steadier record rather than the louder one, and a disagreement about a song stays a disagreement about the song.";
+  const show4 = "Because the curiosity is mutual, the collection compounds: what either of you finds becomes something you both have, and neither of you can quite remember whose song it was first.";
+  const show5 = p.subP>=p.vitP
+    ? "When one of the quiet ones comes on, they let it finish before they speak."
+    : "When the right groove lands, they are up before they think to be self-conscious about it.";
+  const show6 = "Mostly, though, it looks smaller than any of this: someone who asks what that song was, plays it back to you a week later, and has already made it part of the house.";
 
   // ---- What they would hear in your favorites: distinct angle per song ----
   const favs=[...p.songs].sort((a,b)=>b.de-a.de).slice(0,2);
@@ -2585,7 +2595,7 @@ function perfectMatchHTML(p){
     +radarSVG(axes,560,620,140,"var(--warm)")
     +'<p class="viz-help" style="margin:14px 0 2px"><b style="color:var(--text)">The traits that would matter:</b></p>'
     +traits.map(t=>'<p class="viz-help" style="margin:0 0 10px">'+t+'</p>').join("")
-    +'<p class="viz-help" style="margin:0 0 12px"><b style="color:var(--text)">How they would show up:</b> '+show1+' '+show2+' '+show3+'</p>'
+    +'<p class="viz-help" style="margin:0 0 12px"><b style="color:var(--text)">How they would show up:</b> '+show1+' '+show2+' '+show3+' '+show4+' '+show5+' '+show6+'</p>'
     +'<p class="viz-help" style="margin:0 0 2px"><b style="color:var(--text)">Your common ground, six songs you would both already love:</b></p>'
     +'<div style="margin:0 0 12px">'+li(m.common)+'</div>'
     +'<p class="viz-help" style="margin:0 0 2px"><b style="color:var(--text)">What they might introduce you to:</b></p>'
@@ -2621,6 +2631,80 @@ function pairedStripSVG(dims){
     g+='<circle cx="'+xa+'" cy="'+y+'" r="7" fill="var(--violet)" stroke="#0E0B1A" stroke-width="1"/>';
     g+='<circle cx="'+xb+'" cy="'+y+'" r="7" fill="none" stroke="var(--warm)" stroke-width="2.5"/>';});
   return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="paired strip">'+g+'</svg>';
+}
+function journeyHeights(p){
+  // Percentile-driven so arcs genuinely differ between people: start height, peak,
+  // and tail all spread across the real population range instead of bunching.
+  const pa=(pct("ar",p.ar)??50)/100;
+  const pk=(pct("buildDensity",p.buildDensity)??50)/100;
+  const pc=(pct("chillsDensity",p.chillsDensity)??50)/100;
+  const ps=(pct("subP",p.subP)??50)/100;
+  const pu=(pct("uneP",p.uneP)??50)/100;
+  const f0=0.07+0.50*pa;
+  const peakDrive=Math.max(pk,0.75*pc,0.6*pa);
+  const climax=Math.min(0.97, Math.max(f0+0.14, 0.36+0.52*peakDrive+0.12*pu));
+  const span=climax-f0;
+  const plateau=p.vitP>p.subP?1:0;
+  return [f0,
+    f0 + span*(plateau?0.58:0.22) + 0.04*p.va,
+    f0 + span*(plateau?0.84:0.46),
+    f0 + span*(plateau?0.97:0.72),
+    climax,
+    p.subP>=p.vitP ? Math.min(climax-0.06, 0.18+0.62*ps) : Math.max(0.03, f0-0.10-0.30*pu)
+  ].map(h=>Math.max(0.04,Math.min(0.97,h)));
+}
+
+function duoJourneySVG(a,b){
+  const W=620,H=210,padX=40,padY=20;
+  const mk=(hs)=>{
+    const xs=hs.map((_,i)=>padX+i*((W-2*padX)/(hs.length-1)));
+    const ys=hs.map(h=>H-padY-h*(H-2*padY));
+    let d='M '+xs[0]+' '+ys[0].toFixed(1);
+    for(let i=1;i<xs.length;i++){const cx=(xs[i-1]+xs[i])/2;d+=' C '+cx+' '+ys[i-1].toFixed(1)+', '+cx+' '+ys[i].toFixed(1)+', '+xs[i]+' '+ys[i].toFixed(1);}
+    return {d,xs,ys};
+  };
+  const A=mk(journeyHeights(a)), B2=mk(journeyHeights(b));
+  let g='<path d="'+A.d+'" fill="none" stroke="var(--violet)" stroke-width="2.6" stroke-linecap="round"/>';
+  g+='<path d="'+B2.d+'" fill="none" stroke="var(--warm)" stroke-width="2.4" stroke-dasharray="6 5" stroke-linecap="round"/>';
+  g+='<circle cx="'+A.xs[4]+'" cy="'+A.ys[4].toFixed(1)+'" r="4" fill="var(--violet)"/>';
+  g+='<circle cx="'+B2.xs[4]+'" cy="'+B2.ys[4].toFixed(1)+'" r="4" fill="var(--warm)"/>';
+  const stages=["orient","invite","accrete","horizon","arrival","afterglow"];
+  g+='<g font-size="12.5" font-family="Inter,sans-serif" fill="var(--muted)" opacity="0.8">'
+    +A.xs.map((x,i)=>'<text x="'+x+'" y="'+(H-4)+'" text-anchor="middle">'+stages[i]+'</text>').join("")+'</g>';
+  g+='<g font-size="14" font-family="Inter,sans-serif" fill="var(--muted)">'
+    +'<circle cx="'+(W/2-100)+'" cy="14" r="5" fill="var(--violet)"/><text x="'+(W/2-89)+'" y="19">your arc</text>'
+    +'<circle cx="'+(W/2+10)+'" cy="14" r="5" fill="var(--warm)"/><text x="'+(W/2+21)+'" y="19">their arc</text></g>';
+  return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="duo journey">'+g+'</svg>';
+}
+function duoCloudSVG(a,b){
+  const W=620,H=350,L=64,R=600,T=18,B=272;
+  const X=v=>L+(R-L)*v, Y=v=>B-(B-T)*v;
+  let g='<line x1="'+L+'" y1="'+B+'" x2="'+R+'" y2="'+B+'" stroke="#4A4180" stroke-width="1.2"/><line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+B+'" stroke="#4A4180" stroke-width="1.2"/>';
+  g+='<g font-size="13.5" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)" opacity="0.75">'
+    +'<text x="'+L+'" y="'+(B+24)+'">calm</text><text x="'+R+'" y="'+(B+24)+'" text-anchor="end">high-energy</text>'
+    +'<text x="'+(L-8)+'" y="'+(B-2)+'" text-anchor="end">light</text><text x="'+(L-8)+'" y="'+(T+10)+'" text-anchor="end">deep</text></g>';
+  const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  a.songs.forEach(s=>{g+='<circle cx="'+X(s.ar).toFixed(1)+'" cy="'+Y(s.de).toFixed(1)+'" r="6" fill="var(--violet)" fill-opacity="0.9" stroke="#0E0B1A" stroke-width="1"><title>'+esc(s.t)+' \u00b7 '+esc(s.a)+'</title></circle>';});
+  b.songs.forEach(s=>{g+='<circle cx="'+X(s.ar).toFixed(1)+'" cy="'+Y(s.de).toFixed(1)+'" r="6" fill="none" stroke="var(--warm)" stroke-width="2"><title>'+esc(s.t)+' \u00b7 '+esc(s.a)+'</title></circle>';});
+  const ly=B+52, lx=(L+R)/2;
+  g+='<g font-size="14" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">'
+    +'<circle cx="'+(lx-120)+'" cy="'+(ly-4)+'" r="5" fill="var(--violet)"/><text x="'+(lx-109)+'" y="'+ly+'">your songs</text>'
+    +'<circle cx="'+(lx+18)+'" cy="'+(ly-4)+'" r="5" fill="none" stroke="var(--warm)" stroke-width="2"/><text x="'+(lx+29)+'" y="'+ly+'">their songs</text></g>';
+  return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="duo cloud">'+g+'</svg>';
+}
+function closestPairLine(a,b,theirIds){
+  const theirs=theirIds.filter(i=>!chosen.includes(i)).map(i=>DB[i]);
+  const mine=chosen.filter(i=>!theirIds.includes(i)).map(i=>DB[i]);
+  if(!theirs.length||!mine.length) return "";
+  let best=null;
+  for(const x of mine)for(const y of theirs){
+    const d=Math.abs(x.ar-y.ar)+Math.abs(x.va-y.va)+Math.abs(x.de-y.de)
+      +Math.abs(x.gems[0]-y.gems[0])+Math.abs(x.gems[1]-y.gems[1])+Math.abs(x.gems[2]-y.gems[2]);
+    if(!best||d<best.d) best={x,y,d};
+  }
+  if(!best||best.d>1.2) return "";
+  const closeness=best.d<0.35?"sit at nearly the same coordinates":"are the nearest neighbors across the two lists";
+  return '<p class="viz-help" style="margin:10px 0 4px"><b style="color:var(--text)">The closest pair:</b> your '+best.x.t+' and their '+best.y.t+' '+closeness+'. If you build a shared queue, start there; it is the bridge both of you can cross without leaving home.</p>';
 }
 function extendedReportHTML(a,b,theirIds){
   const P=(k,v)=>pct(k,v)??50;
@@ -2691,9 +2775,13 @@ function extendedReportHTML(a,b,theirIds){
 
   const closing="Two song lists cannot tell you whether to choose each other. What they can do is smaller and more useful: name where the ease will come from, name where the friction will come from, and take the surprise out of both. Every gap above is survivable once it has a name, and every alignment is worth more once you know it is rare. The rest is not in the data, and it should not be.";
 
+  const radAxes=[["O","Openness"],["Ag","Agreeableness"],["Co","Conscientiousness"],["Ex","Extraversion"],["Ne","Neuroticism"]]
+    .map(([k,label])=>({label,P:P(k,a[k]),P2:P(k,b[k])}));
   return '<p style="font-family:\'Instrument Serif\',serif;font-size:31px;margin:6px 0 2px">'+score+'% compatible</p>'
     +'<p style="margin:4px 0 14px">'+opening+'</p>'
-    +'<p class="viz-help" style="margin:0 0 4px">Every dimension, side by side. The connecting bar is the gap; the shaded band is the middle half of listeners.</p>'
+    +'<p class="viz-help" style="margin:0 0 4px">Two personalities, one shape. Solid is you, dashed is them; where the shapes track each other, so do you.</p>'
+    +radarSVG(radAxes,560,620,140)
+    +'<p class="viz-help" style="margin:16px 0 4px">Every dimension, side by side. The connecting bar is the gap; the shaded band is the middle half of listeners.</p>'
     +pairedStripSVG(rows)
     +'<p class="viz-help" style="margin:14px 0 4px"><b style="color:var(--text)">What you each bring:</b> You bring '+bringYou+'. They bring '+bringThem+'.</p>'
     +'<p class="viz-help" style="margin:0 0 12px"><b style="color:var(--text)">Where it will be easy:</b> '+easy+'</p>'
@@ -2701,6 +2789,13 @@ function extendedReportHTML(a,b,theirIds){
     +friction
     +'<p class="viz-help" style="margin:8px 0 4px"><b style="color:var(--text)">Going in:</b> '+knowYou+' '+knowThem+'</p>'
     +'<p class="viz-help" style="margin:0 0 4px"><b style="color:var(--text)">The exchange:</b> '+trade+'</p>'
+    +'<p class="viz-help" style="margin:14px 0 4px">Both lists in the same space: your songs solid, theirs as rings. Where dots mingle, your libraries already overlap; where one color stands alone is what that person brings.</p>'
+    +duoCloudSVG(a,b)
+    +closestPairLine(a,b,theirIds)
+    +'<p class="viz-help" style="margin:14px 0 4px">How a typical favorite carries each of you, from first contact to the peak and out. Where the arcs rhyme, the same moments in a song land for both of you.</p>'
+    +duoJourneySVG(a,b)
+    +'<p class="viz-help" style="margin:14px 0 4px">Your two emotional centers of gravity, placed between the three emotion families.</p>'
+    +ternarySVG(a,b)
     +(shared.length?'<p class="viz-help" style="margin:0 0 4px">Songs you both picked: '+shared.slice(0,4).join(", ")+'.</p>':"")
     +'<p style="margin:16px 0 0">'+closing+'</p>'
     +'<p class="viz-help" style="margin:12px 0 0;opacity:.75">Weighted the way the research points: openness and values similarity carry most of it, steadiness helps regardless, contrast is texture. Effects are modest and taste is one channel of a relationship.</p>';
