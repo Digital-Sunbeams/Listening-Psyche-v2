@@ -2180,6 +2180,13 @@ function radarSVG(axes,size,maxW,labelPad,color,showVals,labelSize){
   return '<svg class="journey-svg" style="max-width:'+(maxW||300)+'px;margin:0 auto;display:block" viewBox="0 '+vTop.toFixed(0)+' '+size+' '+vH.toFixed(0)+'" role="img" aria-label="radar chart">'
     +'<defs><linearGradient id="radGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--cool)"/><stop offset=".55" stop-color="var(--violet)"/><stop offset="1" stop-color="var(--warm)"/></linearGradient></defs>'+g+'</svg>';
 }
+function bigFiveRadar(p){
+  const MOB=(typeof window!=="undefined"&&window.innerWidth<640);
+  const names=MOB?["O","A","C","E","N"]:["Openness","Agreeableness","Conscientiousness","Extraversion","Neuroticism"];
+  const keys=["O","Ag","Co","Ex","Ne"];
+  const axes=keys.map((k,i)=>({label:names[i],P:pct(k,p[k])??50}));
+  return MOB ? radarSVG(axes,340,620,62,null,true,21) : radarSVG(axes,560,620,140,null,true,17.5);
+}
 function fingerprintDims(p){
   return [["O","O","Openness"],["Ag","A","Agreeableness"],["Co","C","Conscientiousness"],["Ex","E","Extraversion"],["Ne","N","Neuroticism"],
     ["E","ET","Empathizer timbres"],["S","SF","Systemizer forms"],["lean","EL","E/S lean"],
@@ -2189,16 +2196,16 @@ function fingerprintDims(p){
 function dotStripSVG(dims){
   const MOB=(typeof window!=="undefined"&&window.innerWidth<640);
   if(MOB){
-    const W=380,rowH=66,padT=36,L=14,R=366,H=padT+dims.length*rowH+6;
+    const W=330,rowH=68,padT=38,L=14,R=314,H=padT+dims.length*rowH+6;
     const X=P=>L+(R-L)*P/100;
-    let g='<text x="'+X(50)+'" y="18" text-anchor="middle" font-size="15" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
-    dims.forEach((d,i)=>{const top=padT+i*rowH, y=top+44;
-      g+='<text x="10" y="'+(top+18)+'" text-anchor="start" font-size="19" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
-      g+='<text x="'+(d.label.length>1?46:34)+'" y="'+(top+18)+'" text-anchor="start" font-size="18" fill="var(--muted)">'+(d.name||"")+'</text>';
+    let g='<text x="'+X(50)+'" y="19" text-anchor="middle" font-size="16" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--muted)">middle half of listeners</text>';
+    dims.forEach((d,i)=>{const top=padT+i*rowH, y=top+46;
+      g+='<text x="10" y="'+(top+19)+'" text-anchor="start" font-size="21" font-family="Inter,sans-serif" letter-spacing="0.02em" fill="var(--violet)">'+d.label+'</text>';
+      g+='<text x="'+(d.label.length>1?50:37)+'" y="'+(top+19)+'" text-anchor="start" font-size="20" fill="var(--muted)">'+(d.name||"")+'</text>';
       g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
       g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
       g+='<line x1="'+X(50)+'" y1="'+(y-8)+'" x2="'+X(50)+'" y2="'+(y+8)+'" stroke="#554B92" stroke-width="1"/>';
-      g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="9" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
+      g+='<circle cx="'+X(d.P)+'" cy="'+y+'" r="9.5" fill="'+(d.P>=75?'var(--warm)':d.P<=25?'var(--cool)':'var(--violet)')+'"/>';});
     return '<svg class="journey-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="percentile strip">'+g+'</svg>';
   }
   const W=660,rowH=44,padT=36,L=268,R=640,H=padT+dims.length*rowH+10;
@@ -2351,7 +2358,7 @@ function renderReport(p){
     <div class="card">
       <h3>Personality estimates · Big Five</h3>
       <p class="viz-help">The shape is plotted as percentiles: each point is where you sit among listeners, not the raw score on the sliders below.</p>
-      ${radarSVG([{label:"Openness",P:pct("O",p.O)??50},{label:"Agreeableness",P:pct("Ag",p.Ag)??50},{label:"Conscientiousness",P:pct("Co",p.Co)??50},{label:"Extraversion",P:pct("Ex",p.Ex)??50},{label:"Neuroticism",P:pct("Ne",p.Ne)??50}],560,620,140,null,true,17.5)}
+      ${bigFiveRadar(p)}
       <div style="margin-top:7px"></div>
       ${traitRow("Openness",p.O,(salience(p)[0]&&salience(p)[0].k==="O"?"The cleanest line in your whole list. It points to ":"It points to ")+traitNote("O",p.O)+".")}
       ${traitRow("Extraversion",p.Ex,"On people: "+traitNote("Ex",p.Ex)+".")}
@@ -2682,13 +2689,13 @@ function unlockMatch(btn){
 function pairedStripSVG(dims){
   const MOB=(typeof window!=="undefined"&&window.innerWidth<640);
   if(MOB){
-    const W=380,rowH=64,padT=42,L=14,R=366,H=padT+dims.length*rowH+6;
+    const W=330,rowH=66,padT=44,L=14,R=314,H=padT+dims.length*rowH+6;
     const X=P=>L+(R-L)*P/100;
     let g='<g font-size="15" font-family="Inter,sans-serif" fill="var(--muted)">'
       +'<circle cx="'+(W/2-72)+'" cy="14" r="5" fill="var(--violet)"/><text x="'+(W/2-61)+'" y="19">you</text>'
       +'<circle cx="'+(W/2+16)+'" cy="14" r="5" fill="none" stroke="var(--warm)" stroke-width="2.5"/><text x="'+(W/2+27)+'" y="19">them</text></g>';
     dims.forEach((d,i)=>{const top=padT+i*rowH, y=top+42;
-      g+='<text x="10" y="'+(top+16)+'" text-anchor="start" font-size="18" fill="var(--muted)">'+d.label+'</text>';
+      g+='<text x="10" y="'+(top+17)+'" text-anchor="start" font-size="20" fill="var(--muted)">'+d.label+'</text>';
       g+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="#4A4180" stroke-width="1"/>';
       g+='<rect x="'+X(25)+'" y="'+(y-4)+'" width="'+(X(75)-X(25))+'" height="8" rx="4" fill="var(--panel-2)"/>';
       const xa=X(d.pa),xb=X(d.pb);
